@@ -169,6 +169,7 @@ a.nav:hover span:before, a.nav:hover span:after
 	
 	#content
 	{
+		width: 75%;
 		font-size: 13px;
 	}
 	
@@ -176,5 +177,13 @@ a.nav:hover span:before, a.nav:hover span:after
 	{
 		margin: auto;
 		display: block;
+	}
+}
+
+@media only screen and (max-device-height: 560px), only screen and (max-height: 560px)
+{
+	#header
+	{
+		position: static;
 	}
 }
