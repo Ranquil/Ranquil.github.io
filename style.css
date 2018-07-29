@@ -1,13 +1,4 @@
-html
-{
-	height: 100%;
-}
-
-*
-{
-	margin: 0;
-	padding: 0;
-}
+@
 
 @font-face
 {
@@ -20,6 +11,17 @@ html
 	font-family: Caviar Dreams;
 	font-weight: bold;
 	src: url('CaviardDreams_Bold.ttf');
+}
+
+html
+{
+	height: 100%;
+}
+
+*
+{
+	margin: 0;
+	padding: 0;
 }
 
 .body
@@ -56,25 +58,6 @@ html
 	font-size: 1em;
 	font-family: Caviar Dreams, Verdana, Geneva, sans-serif;
 	color: #e6f3ea;
-}
-
-/*==================================================================*/
-
-#content
-{
-	box-sizing: border-box;
-	margin: auto;
-	width: 50%;
-	padding: 25px 0px;
-	font-family: Caviar Dreams, Verdana, Geneva, sans-serif;
-	font-size: 15px;
-	color: #e6f3ea;
-}
-
-#content p
-{
-	line-height: 1.6;
-	margin-bottom: 10px;
 }
 
 /*==================================================================*/
@@ -138,8 +121,28 @@ a.nav:hover span:before, a.nav:hover span:after
 
 /*==================================================================*/
 
+#content
+{
+	box-sizing: border-box;
+	margin: auto;
+	width: 50%;
+	padding: 25px 0px;
+	font-family: Caviar Dreams, Verdana, Geneva, sans-serif;
+	font-size: 15px;
+	color: #e6f3ea;
+}
+
+#content p
+{
+	line-height: 1.6;
+	margin-bottom: 10px;
+}
+
+/*==================================================================*/
+
 #footer
 {
+	position: sticky;
 	bottom: 0;
 	padding: 20px;
 	border-top: 10px solid #c5d8c1;
@@ -157,17 +160,35 @@ a.nav:hover span:before, a.nav:hover span:after
 	color: #c5d8c1;
 }
 
+a.smicon svg
+{
+	height: 25px;
+	width: auto;
+	margin-right: 10px;
+}
+
+a.smicon svg path
+{
+	fill: #c5d8c1 !important;
+	transition-duration: 0.2s;
+}
+
+a.smicon svg path:hover
+{
+	fill: white !important;
+}
+
 /*==================================================================*/
 
 @media only screen and (max-device-width: 560px), only screen and (max-width: 560px)
 {
-	#header
+	#header, #footer
 	{
 		position: static;
 		font-size: 16px;
 	}
 	
-	#content
+	#content, #footer #container
 	{
 		width: 75%;
 		font-size: 13px;
@@ -182,7 +203,7 @@ a.nav:hover span:before, a.nav:hover span:after
 
 @media only screen and (max-device-height: 560px), only screen and (max-height: 560px)
 {
-	#header
+	#header, #footer
 	{
 		position: static;
 	}
