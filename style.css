@@ -3,14 +3,14 @@
 @font-face
 {
 	font-family: 'Caviar Dreams';
-	src: url('CaviarDreams.ttf');
+	src: url('caviardreams.ttf');
 }
 
 @font-face
 {
 	font-family: 'Caviar Dreams';
 	font-weight: bold;
-	src: url('CaviardDreams_Bold.ttf');
+	src: url('caviardreams_bold.ttf');
 }
 
 html
@@ -33,6 +33,7 @@ html
 	background: rgba(2,4,16.5), url("img/bgblue_64.png");
 	background: -webkit-linear-gradient(left, rgba(0,0,0,0.9), rgba(0,0,0,0.5), rgba(0,0,0,0.1), rgba(0,0,0,0.5), rgba(0,0,0,0.9)), url("img/bgblue_64.png");
 	background: linear-gradient(to right, rgba(2,4,16,0.9), rgba(2,4,16,0.5), rgba(2,4,16,0.1), rgba(2,4,16,0.5), rgba(2,4,16,0.9)), url("img/bgblue_64.png");
+	background-attachment: fixed;
 	margin: 0;
 	padding: 0;
 }
