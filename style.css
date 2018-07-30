@@ -189,7 +189,7 @@ a.smicon svg path:hover
 
 /*==================================================================*/
 
-@media only screen and (max-device-width: 620px), only screen and (max-width: 620px)
+@media only screen and (max-device-width: 540px), only screen and (max-width: 540px)
 {
 	.body
 	{
@@ -218,7 +218,7 @@ a.smicon svg path:hover
 	}
 }
 
-@media only screen and (max-device-height: 620px), only screen and (max-height: 620px)
+@media only screen and (max-device-height: 540px), only screen and (max-height: 540px)
 {
 	.body
 	{
