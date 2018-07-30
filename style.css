@@ -2,13 +2,13 @@
 
 @font-face
 {
-	font-family: Caviar Dreams;
+	font-family: 'Caviar Dreams';
 	src: url('CaviarDreams.ttf');
 }
 
 @font-face
 {
-	font-family: Caviar Dreams;
+	font-family: 'Caviar Dreams';
 	font-weight: bold;
 	src: url('CaviardDreams_Bold.ttf');
 }
@@ -53,13 +53,13 @@ html
 #header h1
 {
 	font-size: 2.82em;
-	font-family: 'Cambria', 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+	font-family: Cambria, 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
 }
 
 #header h2
 {
 	font-size: 1em;
-	font-family: Caviar Dreams, Verdana, Geneva, sans-serif;
+	font-family: 'Caviar Dreams', Verdana, Geneva, sans-serif;
 	color: #e6f3ea;
 }
 
@@ -74,7 +74,7 @@ div.nav
 a.nav
 {
 	width: 129px;
-	font-family: 'Cambria', 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+	font-family: Cambria, 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
 	font-size: 16px;
 	font-variant: small-caps;
 	text-align: center;
@@ -130,7 +130,7 @@ a.nav:hover span:before, a.nav:hover span:after
 	margin: auto;
 	width: 50%;
 	padding: 25px 0px;
-	font-family: Caviar Dreams, Verdana, Geneva, sans-serif;
+	font-family: 'Caviar Dreams', Verdana, Geneva, sans-serif;
 	font-size: 15px;
 	color: #e6f3ea;
 }
@@ -153,14 +153,19 @@ a.nav:hover span:before, a.nav:hover span:after
 	padding: 20px 0px;
 }
 
-#footer #container
+#container
 {
 	width: 50%;
 	margin: auto;
-	font-family: Caviar Dreams, Verdana, Geneva, sans-serif;
+	font-family: 'Caviar Dreams', Verdana, Geneva, sans-serif;
 	font-size: 18px;
 	font-weight: bold;
 	color: #c5d8c1;
+}
+
+a.smicon
+{
+	text-decoration: none;
 }
 
 a.smicon svg
@@ -199,7 +204,7 @@ a.smicon svg path:hover
 		font-size: 16px;
 	}
 	
-	#content, #footer #container
+	#content, #container
 	{
 		width: 75%;
 		font-size: 13px;
@@ -227,7 +232,7 @@ a.smicon svg path:hover
 		position: static;
 	}
 	
-	#content, #footer #container
+	#content, #container
 	{
 		width: 75%;
 		font-size: 13px;
