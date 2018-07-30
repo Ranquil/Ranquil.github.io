@@ -28,8 +28,11 @@ html
 {
 	color: white;
 	visibility: scroll;
-	background: url("img/bg_64.png");
-	background: -webkit-linear-gradient(left, rgba(0,0,0,0.9), rgba(0,0,0,0), rgba(0,0,0,0), rgba(0,0,0,0), rgba(0,0,0,0.9)), url("img/bg_64.png");
+	background: #020410;
+	background: url("img/bgblue_64.png");
+	background: rgba(2,4,16.5), url("img/bgblue_64.png");
+	background: -webkit-linear-gradient(left, rgba(0,0,0,0.9), rgba(0,0,0,0.5), rgba(0,0,0,0.1), rgba(0,0,0,0.5), rgba(0,0,0,0.9)), url("img/bgblue_64.png");
+	background: linear-gradient(to right, rgba(2,4,16,0.9), rgba(2,4,16,0.5), rgba(2,4,16,0.1), rgba(2,4,16,0.5), rgba(2,4,16,0.9)), url("img/bgblue_64.png");
 	margin: 0;
 	padding: 0;
 }
@@ -93,7 +96,7 @@ a.nav span
 
 a.nav span:before
 {
-	content: '\25C2\2002';
+	content: '\25C2\00a0';
 	position: inline-block;
 	top: 0;
 	opacity: 0;
@@ -102,7 +105,7 @@ a.nav span:before
 
 a.nav span:after
 {
-	content: '\2002\25B8';
+	content: '\00a0\25B8';
 	position: inline-block;
 	top: 0;
 	opacity: 0;
@@ -180,8 +183,16 @@ a.smicon svg path:hover
 
 /*==================================================================*/
 
-@media only screen and (max-device-width: 560px), only screen and (max-width: 560px)
+@media only screen and (max-device-width: 620px), only screen and (max-width: 620px)
 {
+	.body
+	{
+		background: url("img/bgblue_32.png");
+		background: rgba(2,4,16.5), url("img/bgblue_32.png");
+		background: -webkit-linear-gradient(left, rgba(0,0,0,0.9), rgba(0,0,0,0.5), rgba(0,0,0,0.1), rgba(0,0,0,0.5), rgba(0,0,0,0.9)), url("img/bgblue_32.png");
+		background: linear-gradient(to right, rgba(2,4,16,0.9), rgba(2,4,16,0.5), rgba(2,4,16,0.1), rgba(2,4,16,0.5), rgba(2,4,16,0.9)), url("img/bgblue_32.png");
+	}
+	
 	#header, #footer
 	{
 		position: static;
@@ -201,10 +212,24 @@ a.smicon svg path:hover
 	}
 }
 
-@media only screen and (max-device-height: 560px), only screen and (max-height: 560px)
+@media only screen and (max-device-height: 620px), only screen and (max-height: 620px)
 {
+	.body
+	{
+		background: url("img/bgblue_32.png");
+		background: rgba(2,4,16.5), url("img/bgblue_32.png");
+		background: -webkit-linear-gradient(left, rgba(0,0,0,0.9), rgba(0,0,0,0.5), rgba(0,0,0,0.1), rgba(0,0,0,0.5), rgba(0,0,0,0.9)), url("img/bgblue_32.png");
+		background: linear-gradient(to right, rgba(2,4,16,0.9), rgba(2,4,16,0.5), rgba(2,4,16,0.1), rgba(2,4,16,0.5), rgba(2,4,16,0.9)), url("img/bgblue_32.png");
+	}
+	
 	#header, #footer
 	{
 		position: static;
+	}
+	
+	#content, #footer #container
+	{
+		width: 75%;
+		font-size: 13px;
 	}
 }
