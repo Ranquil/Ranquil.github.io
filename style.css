@@ -1,4 +1,6 @@
-@
+@import url(//https://fonts.googleapis.com/earlyaccess/mplus1p.css);
+
+@import url(//https://fonts.googleapis.com/earlyaccess/hannari.css);
 
 @font-face
 {
@@ -38,7 +40,7 @@ html
 	padding: 0;
 }
 
-/*==================================================================*/
+/*HEADER==================================================================*/
 
 #header
 {
@@ -64,7 +66,20 @@ html
 	color: #e6f3ea;
 }
 
-/*==================================================================*/
+/*HEADER --> Text*/
+
+#header h2 span:after
+{
+	content: "game\00a0 designer \2013  2D\00a0 artist \2013  illustrator";
+}
+
+:lang(fi) #header h2 span:after
+{
+	
+	content: "pelisuunnittelija \2013  2D-graafikko \2013  kuvittaja";
+}
+
+/*NAVIGATION==================================================================*/
 
 div.nav
 {
@@ -74,7 +89,7 @@ div.nav
 
 a.nav
 {
-	width: 129px;
+	width: 140px;
 	font-family: Cambria, 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
 	font-size: 16px;
 	font-variant: small-caps;
@@ -88,25 +103,25 @@ a.nav
 	transition-duration: 0.2s;
 }
 
-a.nav span
+span.nav
 {
 	display: inline-block;
 	position: relative;
 	transition: 0.2s;
 }
 
-a.nav span:before
+span.nav:before
 {
-	content: '\25C2\00a0';
+	content: "\25C2\00a0";
 	position: inline-block;
 	top: 0;
 	opacity: 0;
 	transition-duration: 0.2s;
 }
 
-a.nav span:after
+span.nav:after
 {
-	content: '\00a0\25B8';
+	content: "\00a0\25B8";
 	position: inline-block;
 	top: 0;
 	opacity: 0;
@@ -118,12 +133,55 @@ a.nav:hover
 	color: white;
 }
 
-a.nav:hover span:before, a.nav:hover span:after
+a.nav:hover span.nav:before, a.nav:hover span.nav:after
 {
 	opacity: 1;
 }
 
-/*==================================================================*/
+/*NAVIGATION -->Text*/
+
+#home:after
+{
+	content: "Home";
+}
+
+#portfolio:after
+{
+	content: "Portfolio";
+}
+
+#experience:after
+{
+	content: "Experience";
+}
+
+#contact:after
+{
+	content: "Contact";
+}
+
+
+:lang(fi) #home:after
+{
+	content: "Etusivu";
+}
+
+:lang(fi) #portfolio:after
+{
+	content: "Portfolio";
+}
+
+:lang(fi) #experience:after
+{
+	content: "Kokemus";
+}
+
+:lang(fi) #contact:after
+{
+	content: "Ota\00a0 yhteyttä";
+}
+
+/*CONTENT==================================================================*/
 
 #content
 {
@@ -142,13 +200,12 @@ a.nav:hover span:before, a.nav:hover span:after
 	margin-bottom: 10px;
 }
 
-/*==================================================================*/
+/*FOOTER==================================================================*/
 
 #footer
 {
 	position: sticky;
 	bottom: 0;
-	padding: 20px;
 	border-top: 10px solid #c5d8c1;
 	background: #52ad9a;
 	padding: 20px 0px;
@@ -162,6 +219,14 @@ a.nav:hover span:before, a.nav:hover span:after
 	font-size: 18px;
 	font-weight: bold;
 	color: #c5d8c1;
+}
+
+div.smicon
+{
+	display: inline-block;
+	position: absolute;
+	left: o;
+	width: 20%;
 }
 
 a.smicon
@@ -187,9 +252,32 @@ a.smicon svg path:hover
 	fill: white !important;
 }
 
-/*==================================================================*/
+#copyright
+{
+	display: inline-block;
+	position: relative;
+	right: 0;
+	bottom: 24px;
+	margin-top: auto;
+	margin-bottom: auto;
+	width: 20%;
+	float: right;
+	font-family: 'Caviar Dreams', Verdana, Geneva, sans-serif;
+	font-size: 15px;
+	text-align: right;
+	color: #e6f3ea;
+}
 
-@media only screen and (max-device-width: 540px), only screen and (max-width: 540px)
+/*FOOTER --> Text*/
+
+#copyright p span:after
+{
+	content: "\00a9	 2018";
+}
+
+/*MEDIA QUERIES==================================================================*/
+
+@media only screen and (max-device-width: 620px), only screen and (max-width: 620px)
 {
 	.body
 	{
@@ -213,8 +301,8 @@ a.smicon svg path:hover
 	
 	a.nav
 	{
-		margin: auto;
 		display: block;
+		margin: auto;
 	}
 }
 
@@ -238,4 +326,5 @@ a.smicon svg path:hover
 		width: 75%;
 		font-size: 13px;
 	}
+	
 }
