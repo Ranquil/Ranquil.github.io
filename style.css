@@ -26,7 +26,7 @@ html
 	padding: 0;
 }
 
-.body
+body
 {
 	color: white;
 	visibility: scroll;
@@ -38,6 +38,13 @@ html
 	background-attachment: fixed;
 	margin: 0;
 	padding: 0;
+}
+
+/*SHARED==================================================================*/
+
+a.nav:hover, #navlang a.hover, #landingpage a:hover
+{
+	color: white;
 }
 
 /*HEADER==================================================================*/
@@ -128,7 +135,7 @@ span.nav
 	transition: 0.2s;
 }
 
-span.nav:before
+span.nav:before, #landingpage a span:before
 {
 	content: "\25C2\00a0";
 	position: inline-block;
@@ -137,7 +144,7 @@ span.nav:before
 	transition-duration: 0.2s;
 }
 
-span.nav:after
+span.nav:after, #landingpage a span:after
 {
 	content: "\00a0\25B8";
 	position: inline-block;
@@ -146,17 +153,28 @@ span.nav:after
 	transition-duration: 0.2s;
 }
 
-a.nav:hover
-{
-	color: white;
-}
-
-a.nav:hover span.nav:before, a.nav:hover span.nav:after
+a.nav:hover span.nav:before, a.nav:hover span.nav:after, #landingpage a:hover span:before, #landingpage a:hover span:after
 {
 	opacity: 1;
 }
 
-/*NAVIGATION -->Text*/
+/*NAVIGATION --> Language selection*/
+
+#navlang
+{
+	position: block;
+	font-family: 'Caviar Dreams', Verdana, Geneva, sans-serif;
+	font-size: 12px;
+	padding: 3px opx;
+}
+
+#navlang a
+{
+	text-decoration: none;
+	color: #c5d8c1;
+}
+
+/*NAVIGATION -->T ext*/
 
 #home:after
 {
@@ -315,11 +333,48 @@ a.smicon svg path:hover
 	content: "\00a9\00a0 2018";
 }
 
+/*LANDING PAGE==================================================================*/
+
+#landingcontainer
+{
+	display: table;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+}
+
+#landingpage
+{
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	font-family: Cambria, 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+	font-size: 30px;
+	font-variant: small-caps;
+	font-weight: bold;
+}
+
+#landingpage a
+{
+	text-decoration: none;
+	color: #c5d8c1;
+	padding: 3px 0px;
+	vertical-align: middle;
+	display: block;
+	transition-duration: 0.2s;
+}
+
+#landingpage a:lang(jp)
+{
+	font-family: Hannari, '游明朝','游明朝体',YuMincho,'Yu Mincho' , 'ＭＳ 明朝' , 'MS Mincho' , HiraMinProN-W3 , 'TakaoEx明朝' , TakaoExMincho , 'MotoyaLCedar' , 'Droid Sans Japanese' , serif;
+}
+
+
 /*MEDIA QUERIES==================================================================*/
 
-@media only screen and (max-device-width: 620px), only screen and (max-width: 620px)
+@media only screen and (max-device-width: 540px), only screen and (max-width: 540px)
 {
-	.body
+	body
 	{
 		background: url("img/bgblue_32.png");
 		background: rgba(2,4,16.5), url("img/bgblue_32.png");
@@ -348,7 +403,7 @@ a.smicon svg path:hover
 
 @media only screen and (max-device-height: 620px), only screen and (max-height: 620px)
 {
-	.body
+	body
 	{
 		background: url("img/bgblue_32.png");
 		background: rgba(2,4,16.5), url("img/bgblue_32.png");
