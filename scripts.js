@@ -7,6 +7,7 @@ function langLink()
 {
 	var linkRow = "";
 	var i;
+	
 	for (i = 0; i < langCodes.length; i++)
 	{
 		linkRow += "<a lang='" + langCodes[i] + "' href='../" + langCodes[i] + "/" + fileName + "'>" + langNames[i] + "</a>";
@@ -20,7 +21,14 @@ function langLink()
 	document.getElementById("navlang").innerHTML = linkRow;
 }
 
-function asd()
+function redirectByLang()
 {
-	alert(langCodes.length);
+	var userLang = navigator.language.substring(0, 2) || navigator.userLanguage.substring(0, 2);
+	
+	if (langCodes.includes(userLang) == false)
+	{
+		userLang = "en";
+	}
+	
+	window.location.href = userLang + "/home.html";
 }
