@@ -42,7 +42,7 @@ body
 
 /*SHARED==================================================================*/
 
-a.nav:hover, #navlang a.hover, #landingpage a:hover
+a.nav:hover, #landingpage a:hover
 {
 	color: white;
 }
@@ -54,7 +54,7 @@ a.nav:hover, #navlang a.hover, #landingpage a:hover
 	position: -webkit-sticky;
 	position: sticky;
 	top: 0;
-	padding: 20px;
+	padding-top: 1px;
 	border-bottom: 10px solid #c5d8c1;
 	background: #52ad9a;
 	text-align: center;
@@ -74,7 +74,7 @@ a.nav:hover, #navlang a.hover, #landingpage a:hover
 	color: #e6f3ea;
 }
 
-:lang(jp) #header h2
+:lang(jp) #header h2/*, #navlang a:lang(jp)*/
 {
 	font-family: 'Mplus 1p', Meiryo , 'ＭＳ ゴシック' , 'MS Gothic' , HiraKakuProN-W3 , 'TakaoExゴシック' , TakaoExGothic , 'MotoyaLCedar' , 'Droid Sans Japanese' , sans-serif;
 }
@@ -102,12 +102,12 @@ a.nav:hover, #navlang a.hover, #landingpage a:hover
 div.nav
 {
 	margin: auto;
-	margin-top: 12px;
+	margin: 5px 0px 12px 0px;
 }
 
 a.nav
 {
-	width: 140px;
+	/*width: 140px;*/
 	font-family: Cambria, 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
 	font-size: 16px;
 	font-variant: small-caps;
@@ -115,7 +115,7 @@ a.nav
 	font-weight: bold;
 	text-decoration: none;
 	color: #c5d8c1;
-	padding: 3px 0px;
+	padding: 10px 5px;
 	vertical-align: middle;
 	display: inline-block;
 	transition-duration: 0.2s;
@@ -163,18 +163,30 @@ a.nav:hover span.nav:before, a.nav:hover span.nav:after, #landingpage a:hover sp
 #navlang
 {
 	position: block;
-	font-family: 'Caviar Dreams', Verdana, Geneva, sans-serif;
-	font-size: 12px;
-	padding: 3px opx;
+	margin-top: 15px;
+	font-family: Cambria, 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+	font-size: 14px;
+	font-variant: small-caps;
+	font-weight: bold;
 }
 
 #navlang a
 {
+	position: inline-block;
+	padding: 3px 5px;
+	background: #c5d8c1;
+	border-radius: 5px;
 	text-decoration: none;
-	color: #c5d8c1;
+	color: #52ad9a;
+	transition-duration: 0.2s;
 }
 
-/*NAVIGATION -->T ext*/
+#navlang a:hover
+{
+	background: white;
+}
+
+/*NAVIGATION -->Text*/
 
 #home:after
 {
@@ -330,7 +342,7 @@ a.smicon svg path:hover
 
 #copyright p span:after
 {
-	content: "\00a9\00a0 2018";
+	content: "\00a9 2018";
 }
 
 /*LANDING PAGE==================================================================*/
@@ -364,7 +376,7 @@ a.smicon svg path:hover
 	transition-duration: 0.2s;
 }
 
-#landingpage a:lang(jp)
+#landingpage a:lang(jp), #langnav a:lang(jp)
 {
 	font-family: Hannari, '游明朝','游明朝体',YuMincho,'Yu Mincho' , 'ＭＳ 明朝' , 'MS Mincho' , HiraMinProN-W3 , 'TakaoEx明朝' , TakaoExMincho , 'MotoyaLCedar' , 'Droid Sans Japanese' , serif;
 }
@@ -398,6 +410,11 @@ a.smicon svg path:hover
 	{
 		display: block;
 		margin: auto;
+	}
+	
+	a.nav:not(#home)
+	{
+		padding: 0px 0px 5px 0px;
 	}
 }
 

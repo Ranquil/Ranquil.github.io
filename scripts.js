@@ -1,19 +1,26 @@
 var langCodes = ["en", "fi", "jp"];
-var langNames = ["EN", "FI", "JP"];
-var fileName = location.href.split("/").slice(-1);
-var langDirectories = [];
+var langNames = ["English", "Suomi", "日本語"];
+var url = window.location.pathname;
+var fileName = url.substring(url.lastIndexOf('/')+1);
 
 function langLink()
 {
+	var linkRow = "";
 	var i;
 	for (i = 0; i < langCodes.length; i++)
 	{
-		var langLink = langNames[i].link("../" + langCodes[i] + "/" + filename);
-		document.getElementById("langnav").innerHTML += langLink;
+		linkRow += "<a lang='" + langCodes[i] + "' href='../" + langCodes[i] + "/" + fileName + "'>" + langNames[i] + "</a>";
 		
-		if (i < langCodes.length--)
+		if (i < langCodes.length + 1)
 		{
-			document.getElementById("langnav").innerHTML += " ";	
+			linkRow += " ";	
 		}
 	}
+	
+	document.getElementById("navlang").innerHTML = linkRow;
+}
+
+function asd()
+{
+	alert(langCodes.length);
 }
