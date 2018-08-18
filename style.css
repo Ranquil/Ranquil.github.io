@@ -40,6 +40,13 @@ body
 	padding: 0;
 }
 
+#main
+{
+	position: relative;
+	min-height: 100%;
+	height: auto;
+}
+
 /*SHARED==================================================================*/
 
 a.nav:hover, #landingpage a:hover
@@ -256,6 +263,7 @@ a.nav:hover span.nav:before, a.nav:hover span.nav:after, #landingpage a:hover sp
 {
 	box-sizing: border-box;
 	margin: auto;
+	margin-bottom: 10%;
 	width: 60%;
 	padding: 25px 0px;
 	font-family: 'Caviar Dreams', Verdana, Geneva, sans-serif;
@@ -269,13 +277,54 @@ a.nav:hover span.nav:before, a.nav:hover span.nav:after, #landingpage a:hover sp
 	margin-bottom: 10px;
 }
 
+:lang(jp) #content
+{
+	font-family: 'Mplus 1p', Meiryo , 'ＭＳ ゴシック' , 'MS Gothic' , HiraKakuProN-W3 , 'TakaoExゴシック' , TakaoExGothic , 'MotoyaLCedar' , 'Droid Sans Japanese' , sans-serif;
+	font-size: 17px;
+}
+
+:lang(jp) #content p
+{
+	line-height: 2;
+	margin-bottom: 5px;
+}
+
+:lang(jp) #content u
+{
+	text-decoration: none;
+	border-bottom: 2px dotted #e6f3ea;
+	border-bottom: 2px dotted #e6f3eac8;
+}
+
+#homeContent
+{
+	box-sizing: border-box;
+	display: relative;
+	/*overflow: auto;*/
+	margin: auto;
+	margin: 50px 0px;
+}
+
+#homeContent img
+{
+	display: block;
+	min-width: 150px;
+	max-width: 40%;
+	height: auto;
+	float: right;
+	margin: 0px 0px 50px 50px;
+	border-radius: 50%;
+	/*border: 5px solid #e8415a;*/
+}
+
 /*FOOTER==================================================================*/
 
 #footer
 {
-	position: -webkit-sticky;
-	position: sticky;
+	/*position: -webkit-sticky;*/
+	position: fixed;
 	bottom: 0;
+	width: 100%;
 	border-top: 10px solid #c5d8c1;
 	background: #52ad9a;
 	padding: 20px 0px;
@@ -404,6 +453,7 @@ a.smicon svg path:hover
 	{
 		width: 75%;
 		font-size: 13px;
+		margin-bottom: 25px;
 	}
 	
 	a.nav
@@ -438,5 +488,16 @@ a.smicon svg path:hover
 		width: 75%;
 		font-size: 13px;
 	}
-	
+}
+
+
+@media only screen and (max-device-width: 800px), only screen and (max-width: 800px)
+{
+	#homeContent img
+	{
+		float: none;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: 25px;
+	}
 }
