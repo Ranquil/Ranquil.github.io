@@ -268,13 +268,23 @@ a.nav:hover span.nav:before, a.nav:hover span.nav:after, #landingpage a:hover sp
 	padding: 25px 0px;
 	font-family: 'Caviar Dreams', Verdana, Geneva, sans-serif;
 	font-size: 15px;
-	color: #e6f3ea;
 }
 
 #content p
 {
 	line-height: 1.6;
+	color: #e6f3ea;
 	margin-bottom: 10px;
+}
+
+#content a:link
+{
+	color: #52ad9a;
+}
+
+#content a:visited
+{
+	color: #e8415a;
 }
 
 :lang(jp) #content
@@ -289,6 +299,11 @@ a.nav:hover span.nav:before, a.nav:hover span.nav:after, #landingpage a:hover sp
 	margin-bottom: 5px;
 }
 
+:lang(jp) #content p span:lang(en), :lang(jp) #content p span:lang(fi)
+{
+	font-family: 'Caviar Dreams', Verdana, Geneva, sans-serif;
+}
+
 :lang(jp) #content u
 {
 	text-decoration: none;
@@ -300,7 +315,6 @@ a.nav:hover span.nav:before, a.nav:hover span.nav:after, #landingpage a:hover sp
 {
 	box-sizing: border-box;
 	display: relative;
-	/*overflow: auto;*/
 	margin: auto;
 	margin: 50px 0px;
 }
@@ -317,11 +331,29 @@ a.nav:hover span.nav:before, a.nav:hover span.nav:after, #landingpage a:hover sp
 	/*border: 5px solid #e8415a;*/
 }
 
+h3
+{
+	font-family: Cambria, 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+	font-size: 1.25em;
+	color: #e8415a;
+	background: #e6f3ea;
+	background: -webkit-linear-gradient(left, #e6f3eaff, #e6f3ea00);
+	background: linear-gradient(to right, #e6f3eaff, #e6f3ea00);
+	padding: 10px;
+	margin: 10px 0px;
+	border-left: 15px solid #52ad9a;
+}
+
+ul
+{
+	color: #e8415a;
+	padding: 10px 0px 10px 20px;
+}
+
 /*FOOTER==================================================================*/
 
 #footer
 {
-	/*position: -webkit-sticky;*/
 	position: fixed;
 	bottom: 0;
 	width: 100%;
