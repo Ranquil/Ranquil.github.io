@@ -290,7 +290,7 @@ a.nav:hover span.nav:before, a.nav:hover span.nav:after, #landingpage a:hover sp
 :lang(jp) #content
 {
 	font-family: 'Mplus 1p', Meiryo , 'ＭＳ ゴシック' , 'MS Gothic' , HiraKakuProN-W3 , 'TakaoExゴシック' , TakaoExGothic , 'MotoyaLCedar' , 'Droid Sans Japanese' , sans-serif;
-	font-size: 17px;
+	font-size: 16px;
 }
 
 :lang(jp) #content p
