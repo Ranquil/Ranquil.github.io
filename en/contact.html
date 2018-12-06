@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang='jp'>
+<html xmlns="http://www.w3.org/1999/xhtml" lang='en'>
 <head>
 <title>Markus Ranki</title>
 <link rel="stylesheet" href="../style.css">
@@ -38,19 +38,43 @@
 
 <div id="content">
 
-<div>
-
-<div id="homeContent">
+<div id="contactContent">
 
 
-<img src="../img/home-compressed.jpg" alt="敬具">
+<p><h4>Twitter:</h4>
+<a target="_blank" href="https://twitter.com/ranquilprod">@ranquilprod</a></p>
+<p><h4>LinkedIn:</h4>
+<a target="_blank" href="https://www.linkedin.com/in/markusranki/">in/markusranki</a></p>
+<p><h4>ArtStation:</h4>
+<a target="_blank" href="https://ranquil.artstation.com/">Ranquil</a></p>
+<p><h4>Business e-mail:</h4>
+ranquilproductions [at] gmail.com</p>
+<br>
+<h3>Contact</h3>
+<form onsubmit="sendEmail(event, 'en')" autocomplete="off">
 
-<p>マルクース・ランキで、ゲームプランナー、 就職活動中の２Ｄデザイナー、イラストレーター、夢追い人です。よろしくお願いします。</p>
-<p>ゲーム開発者では、直感的な<b>ＵＸ・ＵＩデザイン</b>、表現的なのに可読な<b>グラフィックデザイン</b>、<b>無駄のない設計</b>を開発によって魅惑的な体験を図ります。すごいゲームを作るように一緒に働きましょう！</p>
-<p>普通のイラストレーションとグラフィックデザインなら、<b>デジタルにも伝統的にも</b>働けますが、後者は水彩とインクを含んでいます。 実質上、様式が<b>面白い構成</b>や<b>表現的な彩り</b>をとりわけ専念しますが、色々の様式で働くことを出来ます。作品はアートスタイルが吸えられたプロジェクトに必要なら、<b>もうある様式にきっちりはまる作品</b>を難なく作れます。</p>
-<p>暇は、料理し、面白いか変な映画を観、ビデオゲームをプレーし、時々外に行くことさえします。</p>
+<div class="formCategory">
+<label for="name">Name:</label>
+<input type="text" id="name" name="name" maxlength="50" placeholder="..." required>
 </div>
 
+<div class="formCategory">
+<label for="email">E-mail address:</label>
+<input type="text" id="email" name="email" maxlength="50" placeholder="..." required>
+</div>
+
+<div class="formCategory">
+<label for="subject">Subject:</label>
+<input type="text" id="subject" name="subject" maxlength="100" placeholder="..." required>
+</div>
+
+<div class="formCategory">
+<label for="message">Message:</label>
+<textarea id="message" name="message" maxlength="800" placeholder="The message character limit is 800 characters." required></textarea>
+</div>
+
+<input type="submit" value="Send message">
+</form>
 </div>
 
 </div>

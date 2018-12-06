@@ -22,6 +22,7 @@ html
 
 *
 {
+	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
 }
@@ -311,7 +312,13 @@ a.nav:hover span.nav:before, a.nav:hover span.nav:after, #landingpage a:hover sp
 	border-bottom: 2px dotted #e6f3eac8;
 }
 
-#homeContent
+:lang(jp) #content b
+{
+	font-weight: bolder;
+	color: #c5d8c1;
+}
+
+#homeContent, #contactContent
 {
 	box-sizing: border-box;
 	display: relative;
@@ -331,23 +338,117 @@ a.nav:hover span.nav:before, a.nav:hover span.nav:after, #landingpage a:hover sp
 	/*border: 5px solid #e8415a;*/
 }
 
+hr
+{
+	border-top: 1px solid #c5d8c1;
+	border-top: 1px solid #c5d8c188;
+}
+
 h3
 {
 	font-family: Cambria, 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
 	font-size: 1.25em;
+	font-variant: small-caps;
+}
+
+#expContent h3
+{
 	color: #e8415a;
 	background: #e6f3ea;
-	background: -webkit-linear-gradient(left, #e6f3eaff, #e6f3ea00);
-	background: linear-gradient(to right, #e6f3eaff, #e6f3ea00);
+	background: -webkit-linear-gradient(left, #e6f3eaff, #c5d8c100);
+	background: linear-gradient(to right, #e6f3eaff, #c5d8c100);
 	padding: 10px;
 	margin: 10px 0px;
 	border-left: 15px solid #52ad9a;
+}
+
+#contactContent h3
+{
+	color: #e6f3ea;
+	background: #52ad9a;
+	padding: 10px 13px;
+}
+
+h4, label
+{
+	font-family: Cambria, 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+	font-size: 1.10em;
+	font-variant: small-caps;
+	font-weight: bold;
+}
+
+:lang(jp) h3, :lang(jp) h4, :lang(jp) label
+{
+	font-family: Hannari, '游明朝','游明朝体',YuMincho,'Yu Mincho' , 'ＭＳ 明朝' , 'MS Mincho' , HiraMinProN-W3 , 'TakaoEx明朝' , TakaoExMincho , 'MotoyaLCedar' , 'Droid Sans Japanese' , serif;
 }
 
 ul
 {
 	color: #e8415a;
 	padding: 10px 0px 10px 20px;
+}
+
+/*CONTENT --> Contact form================================================*/
+
+/*form
+{
+	margin-top: 15px;
+}*/
+
+.formCategory
+{
+	background: #00000033;/*
+	background: -webkit-linear-gradient(left, #00000011, #00000000), -webkit-linear-gradient(up, #00000011, #00000000);
+	background: linear-gradient(to right, #00000011, #00000000), linear-gradient(to down, #00000011, #00000000);*/
+	padding: 10px 15px 2px 15px;
+	box-sizing: border-box;
+	/*border-left: 5px solid #52ad9a;*/
+	border-top: 5px solid #52ad9a;
+}
+
+form  .formCategory:nth-of-type(1)
+{
+	border-top: 5px solid #c5d8c1;
+}
+
+input[type=text], textarea
+{
+	width: 100%;
+	background: none;
+	padding: 12px;
+	margin-top: 6px;
+	margin-bottom: 16px;
+	display: block;
+	border: none;
+	color: #e6f3ea;
+}
+
+textarea
+{
+	height: 300px;
+	resize: vertical;
+}
+
+input[type=submit]
+{
+	width: 100%;
+	height: auto;
+	background: #e8415a;
+	border: none;
+	color: white;
+	font-family: Cambria, 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+	font-size: 1.2em;
+	font-variant: small-caps;
+	font-weight: bold;
+	box-sizing: border-box;
+	padding: 15px;
+	transition-duration: 0.5s;
+}
+
+input[type=submit]:hover
+{
+	background: white;
+	color: #e8415a;
 }
 
 /*FOOTER==================================================================*/
