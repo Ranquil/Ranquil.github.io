@@ -1,7 +1,34 @@
 var langCodes = ["en", "fi", "jp"];
 var langNames = ["English", "Suomi", "日本語"];
+var pageFiles = ["home.html", "#", "exp.html", "contact.html"];
+var pageIds = ["home", "portfolio", "experience", "contact"];
+var pageNames =
+{
+	home: ["Home", "Etusivu", "ホーム"],
+	portfolio: ["Gallery", "Galleria", "ギャラリー"],
+	experience: ["Experience", "Kokemus", "経験"],
+	contact: ["Contact", "Ota yhteyttä","ご連絡"]
+};
+
 var url = window.location.pathname;
 var fileName = url.substring(url.lastIndexOf('/')+1);
+/*var pageLangString = url.substring(url.lastIndexOf('/'));
+function pageLang()
+{
+	switch (pageLangString)
+	{
+		case "fi":
+		return 1;
+		break;
+		
+		case "jp":
+		return 2;
+		break;
+		
+		default:
+		return 0;
+	};
+}*/
 
 function langLink()
 {
@@ -19,6 +46,19 @@ function langLink()
 	}
 	
 	document.getElementById("navlang").innerHTML = linkRow;
+}
+
+function navigationLink(lang)
+{
+	var linkRow = "";
+	var i;
+	
+	for (i = 0; i <  pageIds.length; i++)
+	{
+		linkRow += "<a href='" + pageFiles[i] + "' class='nav'><span class='nav'><span id='" + pageIds[i] + "'></span></span></a>";
+	}
+	
+	document.getElementById("navigationBar").innerHTML = linkRow;
 }
 
 function redirectByLang()

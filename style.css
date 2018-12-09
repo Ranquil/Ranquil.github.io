@@ -33,9 +33,9 @@ body
 	visibility: scroll;
 	background: #020410;
 	background: url("img/bgblue_64.png");
-	background: rgba(2,4,16.5), url("img/bgblue_64.png");
-	background: -webkit-linear-gradient(left, rgba(0,0,0,0.9), rgba(0,0,0,0.5), rgba(0,0,0,0.1), rgba(0,0,0,0.5), rgba(0,0,0,0.9)), url("img/bgblue_64.png");
-	background: linear-gradient(to right, rgba(2,4,16,0.9), rgba(2,4,16,0.5), rgba(2,4,16,0.1), rgba(2,4,16,0.5), rgba(2,4,16,0.9)), url("img/bgblue_64.png");
+	background: rgba(2,4,16,0.5), url("img/bgblue_64.png");
+	background: -webkit-linear-gradient(left, rgba(2,4,16,0.9), rgba(2,4,16,0.6), rgba(2,4,16,0.3), rgba(2,4,16.6), rgba(2,4,16,0.9)), url("img/bgblue_64.png");
+	background: linear-gradient(to right, rgba(2,4,16,0.9), rgba(2,4,16,0.6), rgba(2,4,16,0.3), rgba(2,4,16,0.6), rgba(2,4,16,0.9)), url("img/bgblue_64.png");
 	background-attachment: fixed;
 	margin: 0;
 	padding: 0;
@@ -107,7 +107,7 @@ a.nav:hover, #landingpage a:hover
 
 /*NAVIGATION==================================================================*/
 
-div.nav
+#navigationBar
 {
 	margin: auto;
 	margin: 5px 0px 12px 0px;
@@ -264,7 +264,7 @@ a.nav:hover span.nav:before, a.nav:hover span.nav:after, #landingpage a:hover sp
 {
 	box-sizing: border-box;
 	margin: auto;
-	margin-bottom: 10%;
+	margin-bottom: 5%;
 	width: 60%;
 	padding: 25px 0px;
 	font-family: 'Caviar Dreams', Verdana, Geneva, sans-serif;
@@ -274,7 +274,7 @@ a.nav:hover span.nav:before, a.nav:hover span.nav:after, #landingpage a:hover sp
 #content p
 {
 	line-height: 1.6;
-	color: #e6f3ea;
+	color: white;/*#e6f3ea;*/
 	margin-bottom: 10px;
 }
 
@@ -349,24 +349,26 @@ h3
 	font-family: Cambria, 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
 	font-size: 1.25em;
 	font-variant: small-caps;
+	color: #e6f3ea;
+	background: #52ad9a;
+	background: #52ad9a88;
+	padding: 10px 13px;
 }
 
-#expContent h3
+/*#expContent h3
 {
 	color: #e8415a;
 	background: #e6f3ea;
-	background: -webkit-linear-gradient(left, #e6f3eaff, #c5d8c100);
-	background: linear-gradient(to right, #e6f3eaff, #c5d8c100);
+	background: -webkit-linear-gradient(left, white, #dddddd);#c5d8c100 #e6f3ea
+	background: linear-gradient(to right, white, #dddddd);
 	padding: 10px;
 	margin: 10px 0px;
 	border-left: 15px solid #52ad9a;
-}
+}*/
 
-#contactContent h3
+/*#contactContent h3, */#expContent h3
 {
-	color: #e6f3ea;
-	background: #52ad9a;
-	padding: 10px 13px;
+	border-left: 15px solid #e6f3ea;
 }
 
 h4, label
@@ -384,7 +386,7 @@ h4, label
 
 ul
 {
-	color: #e8415a;
+	color: #52ad9a;
 	padding: 10px 0px 10px 20px;
 }
 
@@ -566,14 +568,14 @@ a.smicon svg path:hover
 
 /*MEDIA QUERIES==================================================================*/
 
-@media only screen and (max-device-width: 540px), only screen and (max-width: 540px)
+@media only screen and (max-device-width: 800px), only screen and (max-width: 800px)
 {
 	body
 	{
 		background: url("img/bgblue_32.png");
 		background: rgba(2,4,16.5), url("img/bgblue_32.png");
-		background: -webkit-linear-gradient(left, rgba(0,0,0,0.9), rgba(0,0,0,0.5), rgba(0,0,0,0.1), rgba(0,0,0,0.5), rgba(0,0,0,0.9)), url("img/bgblue_32.png");
-		background: linear-gradient(to right, rgba(2,4,16,0.9), rgba(2,4,16,0.5), rgba(2,4,16,0.1), rgba(2,4,16,0.5), rgba(2,4,16,0.9)), url("img/bgblue_32.png");
+		background: -webkit-linear-gradient(left, rgba(2,4,16,0.9), rgba(2,4,16,0.6), rgba(2,4,16,0.3), rgba(2,4,16,0.6), rgba(2,4,16,0.9)), url("img/bgblue_32.png");
+		background: linear-gradient(to right, rgba(2,4,16,0.9), rgba(2,4,16,0.6), rgba(2,4,16,0.3), rgba(2,4,16,0.6), rgba(2,4,16,0.9)), url("img/bgblue_32.png");
 	}
 	
 	#header, #footer
@@ -585,30 +587,27 @@ a.smicon svg path:hover
 	#content, #container
 	{
 		width: 75%;
-		font-size: 13px;
+		/*font-size: 13px;*/
 		margin-bottom: 25px;
 	}
 	
-	a.nav
+	#homeContent img
 	{
-		display: block;
-		margin: auto;
-	}
-	
-	a.nav:not(#home)
-	{
-		padding: 0px 0px 5px 0px;
+		float: none;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: 25px;
 	}
 }
 
-@media only screen and (max-device-height: 620px), only screen and (max-height: 620px)
+@media only screen and (max-device-height: 800px), only screen and (max-height: 800px)
 {
 	body
 	{
 		background: url("img/bgblue_32.png");
 		background: rgba(2,4,16.5), url("img/bgblue_32.png");
-		background: -webkit-linear-gradient(left, rgba(0,0,0,0.9), rgba(0,0,0,0.5), rgba(0,0,0,0.1), rgba(0,0,0,0.5), rgba(0,0,0,0.9)), url("img/bgblue_32.png");
-		background: linear-gradient(to right, rgba(2,4,16,0.9), rgba(2,4,16,0.5), rgba(2,4,16,0.1), rgba(2,4,16,0.5), rgba(2,4,16,0.9)), url("img/bgblue_32.png");
+		background: -webkit-linear-gradient(left, rgba(2,4,16,0.9), rgba(2,4,16,0.6), rgba(2,4,16,0.3), rgba(2,4,16,0.6), rgba(2,4,16,0.9)), url("img/bgblue_32.png");
+		background: linear-gradient(to right, rgba(2,4,16,0.9), rgba(2,4,16,0.6), rgba(2,4,16,0.3), rgba(2,4,16,0.6), rgba(2,4,16,0.9)), url("img/bgblue_32.png");
 	}
 	
 	#header, #footer
@@ -619,18 +618,21 @@ a.smicon svg path:hover
 	#content, #container
 	{
 		width: 75%;
-		font-size: 13px;
+		/*font-size: 13px;*/
 	}
 }
 
 
-@media only screen and (max-device-width: 800px), only screen and (max-width: 800px)
+@media only screen and (max-device-width: 540px), only screen and (max-width: 540px)
 {
-	#homeContent img
+	a.nav
 	{
-		float: none;
-		margin-left: auto;
-		margin-right: auto;
-		margin-bottom: 25px;
+		display: block;
+		margin: auto;
+	}
+	
+	a.nav:not(#home)
+	{
+		padding: 0px 0px 5px 0px;
 	}
 }
