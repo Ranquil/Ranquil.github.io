@@ -1,34 +1,29 @@
 var langCodes = ["en", "fi", "jp"];
 var langNames = ["English", "Suomi", "日本語"];
 var pageFiles = ["home.html", "#", "exp.html", "contact.html"];
-var pageIds = ["home", "portfolio", "experience", "contact"];
+var pageIds = ["home", "gallery", "experience", "contact"];
 var pageNames =
 {
 	home: ["Home", "Etusivu", "ホーム"],
-	portfolio: ["Gallery", "Galleria", "ギャラリー"],
+	gallery: ["Gallery", "Galleria", "ギャラリー"],
 	experience: ["Experience", "Kokemus", "経験"],
 	contact: ["Contact", "Ota yhteyttä","ご連絡"]
 };
+var digitalImgFiles =
+[
+	
+]
+var tradImgFiles =
+[
+	"whale"
+]
+var gameArtImgFiles =
+[
+
+]
 
 var url = window.location.pathname;
 var fileName = url.substring(url.lastIndexOf('/')+1);
-/*var pageLangString = url.substring(url.lastIndexOf('/'));
-function pageLang()
-{
-	switch (pageLangString)
-	{
-		case "fi":
-		return 1;
-		break;
-		
-		case "jp":
-		return 2;
-		break;
-		
-		default:
-		return 0;
-	};
-}*/
 
 function langLink()
 {
@@ -71,6 +66,11 @@ function redirectByLang()
 	}
 	
 	window.location.href = userLang + "/home.html";
+}
+
+function gallerySetup(lang)
+{
+	
 }
 
 function sendEmail(e, userLang)

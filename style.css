@@ -5,6 +5,7 @@
 @font-face
 {
 	font-family: 'Caviar Dreams';
+	font-weight: bolder;
 	src: url('caviardreams.ttf');
 }
 
@@ -178,6 +179,11 @@ a.nav:hover span.nav:before, a.nav:hover span.nav:after, #landingpage a:hover sp
 	font-weight: bold;
 }
 
+#navlang:lang(jp)
+{
+	font-family: Hannari, '游明朝','游明朝体',YuMincho,'Yu Mincho' , 'ＭＳ 明朝' , 'MS Mincho' , HiraMinProN-W3 , 'TakaoEx明朝' , TakaoExMincho , 'MotoyaLCedar' , 'Droid Sans Japanese' , serif;
+}
+
 #navlang a
 {
 	position: inline-block;
@@ -201,9 +207,9 @@ a.nav:hover span.nav:before, a.nav:hover span.nav:after, #landingpage a:hover sp
 	content: "Home";
 }
 
-#portfolio:after
+#gallery:after
 {
-	content: "Samples";
+	content: "Gallery";
 }
 
 #experience:after
@@ -222,9 +228,9 @@ a.nav:hover span.nav:before, a.nav:hover span.nav:after, #landingpage a:hover sp
 	content: "Etusivu";
 }
 
-:lang(fi) #portfolio:after
+:lang(fi) #gallery:after
 {
-	content: "Näytteet";
+	content: "Galleria";
 }
 
 :lang(fi) #experience:after
@@ -243,9 +249,9 @@ a.nav:hover span.nav:before, a.nav:hover span.nav:after, #landingpage a:hover sp
 	content: "ホーム";
 }
 
-:lang(jp) #portfolio:after
+:lang(jp) #gallery:after
 {
-	content: "サンプル";
+	content: "ギャラリー";
 }
 
 :lang(jp) #experience:after
@@ -338,6 +344,49 @@ a.nav:hover span.nav:before, a.nav:hover span.nav:after, #landingpage a:hover sp
 	/*border: 5px solid #e8415a;*/
 }
 
+#expSoftware
+{
+	display: flex;
+	margin: 22px 0px;
+}
+
+#expSoftware div
+{
+	flex-grow: 1;
+	background: #00000088;
+	border: 2px solid #52ad9a;
+	border-left: none;
+	/*margin: 0px 5px;*/
+}
+
+#expSoftware div:nth-of-type(1)
+{
+	border-left: 2px solid #52ad9a;
+}
+
+#expSoftware ul
+{
+	padding-left: 28px;
+}
+
+#expSoftware h4
+{
+	background: #52ad9a44;
+	padding: 15px 0px;
+	text-align: center;
+	border-bottom: 2px solid #52ad9a;
+}
+
+#expSoftware h4 span:before
+{
+	content: "\25C2\00a0";
+}
+
+#expSoftware h4 span:after
+{
+	content: "\00a0\25B8";
+}
+
 hr
 {
 	border-top: 1px solid #c5d8c1;
@@ -349,10 +398,11 @@ h3
 	font-family: Cambria, 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
 	font-size: 1.25em;
 	font-variant: small-caps;
-	color: #e6f3ea;
+	color: white;/*#e6f3ea;*/
 	background: #52ad9a;
-	background: #52ad9a88;
+	background: #52ad9acc;
 	padding: 10px 13px;
+	border-left: 15px solid #c5d8c1;
 }
 
 /*#expContent h3
@@ -366,9 +416,9 @@ h3
 	border-left: 15px solid #52ad9a;
 }*/
 
-/*#contactContent h3, */#expContent h3
+/*#contactContent h3, */#contactContent h3
 {
-	border-left: 15px solid #e6f3ea;
+	border: none;
 }
 
 h4, label
@@ -615,15 +665,15 @@ a.smicon svg path:hover
 		position: static;
 	}
 	
-	#content, #container
+	/*#content, #container
 	{
 		width: 75%;
-		/*font-size: 13px;*/
-	}
+		font-size: 13px;
+	}*/
 }
 
 
-@media only screen and (max-device-width: 540px), only screen and (max-width: 540px)
+@media only screen and (max-device-width: 600px), only screen and (max-width: 600px)
 {
 	a.nav
 	{
@@ -634,5 +684,21 @@ a.smicon svg path:hover
 	a.nav:not(#home)
 	{
 		padding: 0px 0px 5px 0px;
+	}
+	
+	#expSoftware
+	{
+		flex-direction: column;
+	}
+	
+	#expSoftware div
+	{
+		border: 2px solid #52ad9a;
+		border-top: none;
+	}
+	
+	#expSoftware div:nth-of-type(1)
+	{
+		border-top: 2px solid #52ad9a;
 	}
 }
