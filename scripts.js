@@ -11,7 +11,8 @@ var pageNames =
 };
 var digitalImgFiles =
 [
-	"limos"
+	"limos",
+	"jigazou"
 ]
 var tradImgFiles =
 [
@@ -80,8 +81,8 @@ function setImgs(imgs, category)
 	
 	for (var i = 0; i < imgs.length; i++)
 	{
-		htmlCode +=	"<a href='../img/gallery/" + imgs[i] + "_big.jpg' data-lightbox='" + category +
-					"'><img src='../img/gallery/" + imgs[i] + "_small.jpg'></a>";
+		htmlCode +=	"<a href=\"../img/gallery/" + imgs[i] + "_big.jpg\" data-lightbox=\"" + category +
+					"\"><img src=\"../img/gallery/" + imgs[i] + "_small.jpg\"></a>";
 	}
 	
 	return htmlCode;
