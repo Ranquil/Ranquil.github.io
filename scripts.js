@@ -11,7 +11,7 @@ var pageNames =
 };
 var digitalImgFiles =
 [
-	
+	"limos"
 ]
 var tradImgFiles =
 [
@@ -68,9 +68,23 @@ function redirectByLang()
 	window.location.href = userLang + "/home.html";
 }
 
-function gallerySetup(lang)
+function gallerySetup()
 {
+	document.getElementById("digital").innerHTML = setImgs(digitalImgFiles, "digital");
+	document.getElementById("trad").innerHTML = setImgs(tradImgFiles, "trad");
+}
+
+function setImgs(imgs, category)
+{
+	var htmlCode = "";
 	
+	for (var i = 0; i < imgs.length; i++)
+	{
+		htmlCode +=	"<a href='../img/gallery/" + imgs[i] + "_big.jpg' data-lightbox='" + category +
+					"'><img src='../img/gallery/" + imgs[i] + "_small.jpg'></a>";
+	}
+	
+	return htmlCode;
 }
 
 function sendEmail(e, userLang)
