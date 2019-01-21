@@ -28,6 +28,43 @@ html
 	padding: 0;
 }
 
+/*$vars: 
+(
+	ff_serif: Cambria, 'Palatino Linotype', 'Book Antiqua', Palatino, serif,
+	ff_sans: 'Caviar Dreams', Verdana, Geneva, sans-serif,
+	ff_serif_jp: Hannari, '游明朝','游明朝体',YuMincho,'Yu Mincho' , 'ＭＳ 明朝' , 'MS Mincho' , HiraMinProN-W3 , 'TakaoEx明朝' , TakaoExMincho , 'MotoyaLCedar' , 'Droid Sans Japanese' , serif,
+	ff_sans_jp: 'Mplus 1p', Meiryo , 'ＭＳ ゴシック' , 'MS Gothic' , HiraKakuProN-W3 , 'TakaoExゴシック' , TakaoExGothic , 'MotoyaLCedar' , 'Droid Sans Japanese' , sans-serif,
+	clr_main: #52ad9a,
+	clr_light: #c5d8c1,
+	clr_dark: #020410,
+	clr_accent: #e8415a
+);
+
+@mixin var($property, $variable)
+{
+	#{$property}: var(--#{$variable});
+}
+
+:root
+{
+	@each $property, $value in $vars
+	{
+		--#{property}: #{$value};
+	}
+}*/
+
+:root
+{
+	--ff_serif: Cambria, 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+	--ff_sans: 'Caviar Dreams', Verdana, Geneva, sans-serif;
+	--ff_serif_jp: Hannari, '游明朝','游明朝体',YuMincho,'Yu Mincho' , 'ＭＳ 明朝' , 'MS Mincho' , HiraMinProN-W3 , 'TakaoEx明朝' , TakaoExMincho , 'MotoyaLCedar' , 'Droid Sans Japanese' , serif;
+	--ff_sans_jp: 'Mplus 1p', Meiryo , 'ＭＳ ゴシック' , 'MS Gothic' , HiraKakuProN-W3 , 'TakaoExゴシック' , TakaoExGothic , 'MotoyaLCedar' , 'Droid Sans Japanese' , sans-serif;
+	--clr_main: #52ad9a;
+	--clr_light: #c5d8c1;
+	--clr_dark: #020410;
+	--clr_accent: #e8415a;
+}
+
 body
 {
 	color: white;
@@ -51,7 +88,7 @@ body
 
 /*SHARED==================================================================*/
 
-a.nav:hover, #landingpage a:hover
+a.nav:hover, #landingPage a:hover
 {
 	color: white;
 }
@@ -64,8 +101,8 @@ a.nav:hover, #landingpage a:hover
 	position: sticky;
 	top: 0;
 	padding-top: 1px;
-	border-bottom: 10px solid #c5d8c1;
-	background: #52ad9a;
+	border-bottom: 10px solid var(--clr_light)/*#c5d8c1*/;
+	background: var(--clr_main);
 	text-align: center;
 	font-size: 18px;
 }
@@ -73,7 +110,7 @@ a.nav:hover, #landingpage a:hover
 #header h1
 {
 	font-size: 2.82em;
-	font-family: Cambria, 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+	font-family: --ff_serif;/*Cambria, 'Palatino Linotype', 'Book Antiqua', Palatino, serif;*/
 }
 
 #header h2
@@ -123,7 +160,7 @@ a.nav
 	text-align: center;
 	font-weight: bold;
 	text-decoration: none;
-	color: #c5d8c1;
+	color: var(--clr_light);/*#c5d8c1;*/
 	padding: 10px 5px;
 	vertical-align: middle;
 	display: inline-block;
@@ -144,7 +181,7 @@ span.nav
 	transition: 0.2s;
 }
 
-span.nav:before, #landingpage a span:before
+span.nav:before, #landingPage a span:before
 {
 	content: "\25C2\00a0";
 	position: inline-block;
@@ -153,7 +190,7 @@ span.nav:before, #landingpage a span:before
 	transition-duration: 0.2s;
 }
 
-span.nav:after, #landingpage a span:after
+span.nav:after, #landingPage a span:after
 {
 	content: "\00a0\25B8";
 	position: inline-block;
@@ -162,7 +199,7 @@ span.nav:after, #landingpage a span:after
 	transition-duration: 0.2s;
 }
 
-a.nav:hover span.nav:before, a.nav:hover span.nav:after, #landingpage a:hover span:before, #landingpage a:hover span:after
+a.nav:hover span.nav:before, a.nav:hover span.nav:after, #landingPage a:hover span:before, #landingPage a:hover span:after
 {
 	opacity: 1;
 }
@@ -173,25 +210,25 @@ a.nav:hover span.nav:before, a.nav:hover span.nav:after, #landingpage a:hover sp
 {
 	position: block;
 	margin-top: 15px;
-	font-family: Cambria, 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+	font-family: var(--ff_serif);
 	font-size: 14px;
 	font-variant: small-caps;
 	font-weight: bold;
 }
 
-#navlang:lang(jp)
+#navlang[lang="jp"]
 {
-	font-family: Hannari, '游明朝','游明朝体',YuMincho,'Yu Mincho' , 'ＭＳ 明朝' , 'MS Mincho' , HiraMinProN-W3 , 'TakaoEx明朝' , TakaoExMincho , 'MotoyaLCedar' , 'Droid Sans Japanese' , serif;
+	font-family: var(--ff_serif_jp);
 }
 
 #navlang a
 {
 	position: inline-block;
 	padding: 3px 5px;
-	background: #c5d8c1;
+	background: var(--clr_light);
 	border-radius: 5px;
 	text-decoration: none;
-	color: #52ad9a;
+	color: var(--clr_main);
 	transition-duration: 0.2s;
 }
 
@@ -273,7 +310,7 @@ a.nav:hover span.nav:before, a.nav:hover span.nav:after, #landingpage a:hover sp
 	margin-bottom: 5%;
 	width: 60%;
 	padding: 25px 0px;
-	font-family: 'Caviar Dreams', Verdana, Geneva, sans-serif;
+	font-family: var(--ff_sans);
 	font-size: 15px;
 }
 
@@ -286,12 +323,12 @@ a.nav:hover span.nav:before, a.nav:hover span.nav:after, #landingpage a:hover sp
 
 #content a:link
 {
-	color: #52ad9a;
+	color: var(--clr_main);
 }
 
 #content a:visited
 {
-	color: #e8415a;
+	color: var(--clr_accent);
 }
 
 :lang(jp) #content
@@ -306,9 +343,9 @@ a.nav:hover span.nav:before, a.nav:hover span.nav:after, #landingpage a:hover sp
 	margin-bottom: 5px;
 }
 
-:lang(jp) #content p span:lang(en), :lang(jp) #content p span:lang(fi)
+:lang(jp) #content p span[lang="en"], :lang(jp) #content p span[lang="fi"], :lang(jp) #content a[lang="en"], :lang(jp) #content a[lang="fi"], :lang(jp) #expSoftware li p
 {
-	font-family: 'Caviar Dreams', Verdana, Geneva, sans-serif;
+	font-family: var(--ff_sans);
 }
 
 :lang(jp) #content u
@@ -353,7 +390,7 @@ a.nav:hover span.nav:before, a.nav:hover span.nav:after, #landingpage a:hover sp
 #expSoftware div
 {
 	flex-grow: 1;
-	background: #00000088;
+	background: rgba(0,0,0,0.5);
 	border: 2px solid #52ad9a;
 	border-left: none;
 	/*margin: 0px 5px;*/
@@ -367,24 +404,6 @@ a.nav:hover span.nav:before, a.nav:hover span.nav:after, #landingpage a:hover sp
 #expSoftware ul
 {
 	padding-left: 28px;
-}
-
-#expSoftware h4
-{
-	background: #52ad9a44;
-	padding: 15px 0px;
-	text-align: center;
-	border-bottom: 2px solid #52ad9a;
-}
-
-#expSoftware h4 span:before
-{
-	content: "\25C2\00a0";
-}
-
-#expSoftware h4 span:after
-{
-	content: "\00a0\25B8";
 }
 
 hr
@@ -416,12 +435,12 @@ h3
 	border-left: 15px solid #52ad9a;
 }*/
 
-/*#contactContent h3, */#contactContent h3
+#contactContent h3
 {
 	border: none;
 }
 
-h4, label
+h4, label, h5
 {
 	font-family: Cambria, 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
 	font-size: 1.10em;
@@ -429,23 +448,44 @@ h4, label
 	font-weight: bold;
 }
 
-:lang(jp) h3, :lang(jp) h4, :lang(jp) label
+#expSoftware h4
 {
-	font-family: Hannari, '游明朝','游明朝体',YuMincho,'Yu Mincho' , 'ＭＳ 明朝' , 'MS Mincho' , HiraMinProN-W3 , 'TakaoEx明朝' , TakaoExMincho , 'MotoyaLCedar' , 'Droid Sans Japanese' , serif;
+	background: rgba(82,173,154,0.25);
+	padding: 15px 0px;
+	text-align: center;
+	border-bottom: 2px solid #52ad9a;
+	color: white;
+}
+
+#expSoftware h4 span:before
+{
+	content: "\25C2\00a0";
+	color: #52ad9a;
+}
+
+#expSoftware h4 span:after
+{
+	content: "\00a0\25B8";
+	color: #52ad9a;
+}
+
+:lang(jp) h3, :lang(jp) h4, :lang(jp) label, :lang(jp) h5
+{
+	font-family: var(--ff_serif_jp);
+}
+
+:lang(jp) h3 span[lang="en"], :lang(jp) h3 span[lang="fi"], :lang(jp) h4 span[lang="en"], :lang(jp) h4 span[lang="fi"], :lang(jp) h5 span[lang="en"], :lang(jp) h5 span[lang="fi"]
+{
+	font-family: var(--ff_serif);
 }
 
 ul
 {
-	color: #52ad9a;
+	color: var(--clr_main);
 	padding: 10px 0px 10px 20px;
 }
 
 /*CONTENT --> Contact form================================================*/
-
-/*form
-{
-	margin-top: 15px;
-}*/
 
 .formCategory
 {
@@ -501,6 +541,179 @@ input[type=submit]:hover
 {
 	background: white;
 	color: #e8415a;
+}
+
+/*CONTENT --> Gallery================================================*/
+
+.galleryContainer
+{
+	display: grid;
+	grid-template-columns: auto auto auto;
+	grid-gap: 10px;
+	padding: 10px;
+	background-color: rgba(0,0,0,0.5);
+}
+
+.galleryContainer a
+{
+	text-decoration: none;
+}
+
+.thumbnail
+{
+	max-width: 75%;
+	height: auto;
+}
+
+.lightbox
+{
+	display: none;
+	position: fixed;
+	z-index: 999;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-color: rgba(0,0,0,0.75);
+	text-decoration: none;
+}
+
+.lightbox_content
+{
+	display: flex;
+	/*height: 90%;
+	width: auto;
+	min-width: 90vw;*/
+}
+
+.lightbox_content_img
+{
+	display: flex;
+	position: relative;
+}
+
+.lightbox_content_img img
+{
+	height: 85vmin;
+	max-height: 100%;
+	width: auto;
+	z-index: 1000;
+}
+
+.lightbox_content_previous, .lightbox_content_next
+{
+	display: flex;
+	position: fixed;
+	width: 75px;
+	height: 75px;
+	/*top: 50%;*/
+	font-size: 100px;
+	color: var(--clr_main) !important;
+	text-decoration: none;
+	opacity: 0.5;
+	transform: scale(1,2);
+	transition-duration: 0.2s;
+}
+
+.lightbox_content_previous
+{
+	left: 1vw;
+	z-index: 1001;
+}
+
+.lightbox_content_next
+{
+	right: 1vw;
+	z-index: 1002;
+}
+
+.lightbox_content_previous:hover, .lightbox_content_next:hover
+{
+	opacity: 1;
+	transform: scale(1.1,2.2);
+}
+
+.lightbox_content_previous:after
+{
+	content: "\25C2";
+}
+
+.lightbox_content_next:after
+{
+	content: "\25B8";
+}
+
+/*.lightbox_content_dummyButton
+{
+	display: inline-flex;
+	position: absolute  !important;
+	width: 3em;
+	height: 3em;
+	top: 50%;
+}*/
+
+.lightbox_content_exit
+{
+	display: flex;
+	position: fixed;
+	width: 75px;
+	height: 75px;
+	top: 1vmax;
+	right: 1vmax;
+	z-index: 1003;
+	font-size: 50px;
+	color: var(--clr_light) !important;
+	text-decoration: none;
+	border: 5px solid var(--clr_light);
+	border-radius: 50%;
+	opacity: 0.5;
+	transition-duration: 0.2s;
+}
+
+.lightbox_content_exit:after
+{
+	content: "X";
+}
+
+.lightbox_content_exit:hover
+{
+	opacity: 1;
+	transform: scale(1.1,1.1);
+}
+
+.v-center
+{
+	align-items: center !important;
+	text-align: center !important;
+}
+
+.h-center
+{
+	
+	justify-content: center !important;
+}
+
+:lang(en) .lightbox h5:before
+{
+	content: "Click or tap anywhere to return";
+}
+
+:lang(fi) .lightbox h5:before
+{
+	content: "Napsauta tai kosketa minne vain palataksesi";
+}
+
+:lang(jp) .lightbox h5:before
+{
+	content: "返るのにどこにもクリックかタップしてください";
+}
+
+.lightbox:target
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	outline: none;
 }
 
 /*FOOTER==================================================================*/
@@ -581,38 +794,43 @@ a.smicon svg path:hover
 
 /*LANDING PAGE==================================================================*/
 
-#landingcontainer
+#landingContainer
 {
-	display: table;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	position: absolute;
 	height: 100%;
 	width: 100%;
 }
 
-#landingpage
+#landingPage
 {
-	display: table-cell;
-	vertical-align: middle;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 	text-align: center;
-	font-family: Cambria, 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+	font-family: var(--ff_serif);
 	font-size: 30px;
 	font-variant: small-caps;
 	font-weight: bold;
 }
 
-#landingpage a
+#landingPage a
 {
+	display: block;
 	text-decoration: none;
-	color: #c5d8c1;
+	color: var(--clr_light);
 	padding: 3px 0px;
 	vertical-align: middle;
 	display: block;
 	transition-duration: 0.2s;
 }
 
-#landingpage a:lang(jp), #langnav a:lang(jp)
+#landingPage a[lang="jp"], #langnav a[lang="jp"]
 {
-	font-family: Hannari, '游明朝','游明朝体',YuMincho,'Yu Mincho' , 'ＭＳ 明朝' , 'MS Mincho' , HiraMinProN-W3 , 'TakaoEx明朝' , TakaoExMincho , 'MotoyaLCedar' , 'Droid Sans Japanese' , serif;
+	font-family: var(--ff_serif_jp);
 }
 
 
@@ -664,22 +882,25 @@ a.smicon svg path:hover
 	{
 		position: static;
 	}
-	
-	/*#content, #container
-	{
-		width: 75%;
-		font-size: 13px;
-	}*/
 }
 
 
 @media only screen and (max-device-width: 600px), only screen and (max-width: 600px)
 {
-	a.nav
+	#navigationBar
+	{
+		display: grid;
+		display: -webkit-grid;
+		grid-template-columns: auto auto;
+		-webkit-grid-template-columns: auto auto;
+		justify-content: center;
+	}
+	
+	/*a.nav
 	{
 		display: block;
 		margin: auto;
-	}
+	}*/
 	
 	a.nav:not(#home)
 	{
@@ -693,12 +914,30 @@ a.smicon svg path:hover
 	
 	#expSoftware div
 	{
-		border: 2px solid #52ad9a;
+		border: 2px solid var(--clr_main);
 		border-top: none;
 	}
 	
 	#expSoftware div:nth-of-type(1)
 	{
-		border-top: 2px solid #52ad9a;
+		border-top: 2px solid var(--clr_main);
+	}
+}
+
+@media \0screen\,screen\9, screen and (min-width:0\0) and (min-resolution: +72dpi) /* INTERNET EXPLORER */
+{
+    #safety, #landingPage
+	{
+		display: none;
+	}
+	
+	#main:after, #landingContainer:after
+	{
+		display: block;
+		text-align: center;
+		font-size: 25px;
+		margin-top: 50px;
+		white-space: pre;
+		content: "Internet Explorer is unfortunately not supported on this site. \A Please use a more supported browser, such as Firefox, Chrome, or Opera. \A \A Internet Exploreria ei valitettavasti tueta tällä sivustolla. \A Ole hyvä ja käytä tuetumpaa selainta, kuten Firefoxia, Chromea tai Operaa. \A \A 残念ながら、「Internet Explorer」はこのサイトで支えられません。 \A 支えられている方のブラウザーは、「Firefox」、「Chrome」、「Opera」をはじめ、使ってください。";
 	}
 }

@@ -73,6 +73,9 @@ function gallerySetup()
 {
 	document.getElementById("digital").innerHTML = setImgs(digitalImgFiles, "digital");
 	document.getElementById("trad").innerHTML = setImgs(tradImgFiles, "trad");
+	
+	document.getElementById("lightboxStorage").innerHTML = setLightboxes(digitalImgFiles, "digital") + setLightboxes(tradImgFiles, "trad");
+	/*document.getElementById("lightboxStorage").innerHTML = setLightboxes(tradImgFiles, "trad");*/
 }
 
 function setImgs(imgs, category)
@@ -81,8 +84,48 @@ function setImgs(imgs, category)
 	
 	for (var i = 0; i < imgs.length; i++)
 	{
-		htmlCode +=	"<a href=\"../img/gallery/" + imgs[i] + "_big.jpg\" data-lightbox=\"" + category +
-					"\"><img src=\"../img/gallery/" + imgs[i] + "_small.jpg\"></a>";
+		htmlCode +=	"<a href='#preview_" + imgs[i] + "'><img class='thumbnail' src='../img/gallery/" + imgs[i] + "_small.jpg'></a>";
+	}
+	
+	return htmlCode;
+}
+
+function setLightboxes(imgs, category)
+{
+	var htmlCode = "";
+	
+	console.log(`There is/are ${imgs.length} image(s) in ${category}.`);
+	
+	var imgsLengthIndex = imgs.length; imgsLengthIndex--;
+	/*I have no earthly idea why I have to do this this way, but the whole browser crashes if I use "imgs.length--"*/
+	
+	for (var i = 0; i < imgs.length; i++)
+	{
+		htmlCode += `<div id='preview_${imgs[i]}' class='lightbox'>
+		<div class='lightbox_content h-center v-center'>`;
+		if (i > 0)
+		{
+			var prevImg = i; prevImg--;
+			/*I have no earthly idea why I have to do this this way, but the whole browser crashes if I use "i++"*/
+			htmlCode += `<a class='lightbox_content_previous v-center' href='#preview_${imgs[prevImg]}'></a>`;
+		}
+		else
+		{
+			/*htmlCode += `<a class='lightbox_content_dummyButton'></a>`;*/
+		}
+		htmlCode += `<div class='lightbox_content_img'>
+		<img src='../img/gallery/${imgs[i]}_big.jpg'>
+		</div>`;
+		if (i < imgsLengthIndex && imgs.length > 1)
+		{
+			var nextImg = i; nextImg++; /*Same problem here. Technology is weird*/
+			htmlCode += `<a class='lightbox_content_next v-center' href='#preview_${imgs[nextImg]}'></a>`;
+		}
+		else
+		{
+			/*htmlCode += `<a class='lightbox_content_dummyButton'></a>`;*/
+		}
+		htmlCode += `<a class='lightbox_content_exit h-center v-center' href='#${category}'></a></div></div>`;
 	}
 	
 	return htmlCode;
@@ -149,16 +192,10 @@ function sendEmail(e, userLang)
 			alert("Error:\n" + err.message);
 		}
 		
-		//);
-		
-		//return true;
-		
 	}
 	
 	else
 	{
 		alert("Asetapa se POST_URL ennen kuin menet julkaisemaan keskeneräisiä sivustoja, senkin pöhkö devaaja.");
-		
-		//return false;
 	}
 }
