@@ -60,6 +60,7 @@ html
 	--ff_serif_jp: Hannari, '游明朝','游明朝体',YuMincho,'Yu Mincho' , 'ＭＳ 明朝' , 'MS Mincho' , HiraMinProN-W3 , 'TakaoEx明朝' , TakaoExMincho , 'MotoyaLCedar' , 'Droid Sans Japanese' , serif;
 	--ff_sans_jp: 'Mplus 1p', Meiryo , 'ＭＳ ゴシック' , 'MS Gothic' , HiraKakuProN-W3 , 'TakaoExゴシック' , TakaoExGothic , 'MotoyaLCedar' , 'Droid Sans Japanese' , sans-serif;
 	--clr_main: #52ad9a;
+	--clr_main_calc: 82,173,154;
 	--clr_light: #c5d8c1;
 	--clr_dark: #020410;
 	--clr_accent: #e8415a;
@@ -154,7 +155,7 @@ a.nav:hover, #landingPage a:hover
 a.nav
 {
 	/*width: 140px;*/
-	font-family: Cambria, 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+	font-family: var(--ff_serif);
 	font-size: 16px;
 	font-variant: small-caps;
 	text-align: center;
@@ -169,7 +170,7 @@ a.nav
 
 :lang(jp) a.nav
 {
-	font-family: Hannari, '游明朝','游明朝体',YuMincho,'Yu Mincho' , 'ＭＳ 明朝' , 'MS Mincho' , HiraMinProN-W3 , 'TakaoEx明朝' , TakaoExMincho , 'MotoyaLCedar' , 'Droid Sans Japanese' , serif;
+	font-family: var(--ff_serif_jp);
 	font-size: 18px;
 	font-variant: normal;
 }
@@ -235,70 +236,6 @@ a.nav:hover span.nav:before, a.nav:hover span.nav:after, #landingPage a:hover sp
 #navlang a:hover
 {
 	background: white;
-}
-
-/*NAVIGATION -->Text*/
-
-#home:after
-{
-	content: "Home";
-}
-
-#gallery:after
-{
-	content: "Gallery";
-}
-
-#experience:after
-{
-	content: "Experience";
-}
-
-#contact:after
-{
-	content: "Contact";
-}
-
-
-:lang(fi) #home:after
-{
-	content: "Etusivu";
-}
-
-:lang(fi) #gallery:after
-{
-	content: "Galleria";
-}
-
-:lang(fi) #experience:after
-{
-	content: "Kokemus";
-}
-
-:lang(fi) #contact:after
-{
-	content: "Ota\00a0 yhteyttä";
-}
-
-
-:lang(jp) #home:after
-{
-	content: "ホーム";
-}
-
-:lang(jp) #gallery:after
-{
-	content: "ギャラリー";
-}
-
-:lang(jp) #experience:after
-{
-	content: "経験";
-}
-
-:lang(jp) #contact:after
-{
-	content: "ご連絡";
 }
 
 /*CONTENT==================================================================*/
@@ -372,7 +309,7 @@ a.nav:hover span.nav:before, a.nav:hover span.nav:after, #landingPage a:hover sp
 #homeContent img
 {
 	display: block;
-	min-width: 150px;
+	min-width: 200px;
 	max-width: 40%;
 	height: auto;
 	float: right;
@@ -442,7 +379,7 @@ h3
 
 h4, label, h5
 {
-	font-family: Cambria, 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+	font-family: var(--ff_serif);
 	font-size: 1.10em;
 	font-variant: small-caps;
 	font-weight: bold;
@@ -450,23 +387,23 @@ h4, label, h5
 
 #expSoftware h4
 {
-	background: rgba(82,173,154,0.25);
+	background: rgba(var(--clr_main_calc),0.25);
 	padding: 15px 0px;
 	text-align: center;
-	border-bottom: 2px solid #52ad9a;
+	border-bottom: 2px solid var(--clr_main);
 	color: white;
 }
 
 #expSoftware h4 span:before
 {
 	content: "\25C2\00a0";
-	color: #52ad9a;
+	color: var(--clr_main);
 }
 
 #expSoftware h4 span:after
 {
 	content: "\00a0\25B8";
-	color: #52ad9a;
+	color: var(--clr_main);
 }
 
 :lang(jp) h3, :lang(jp) h4, :lang(jp) label, :lang(jp) h5
@@ -495,12 +432,12 @@ ul
 	padding: 10px 15px 2px 15px;
 	box-sizing: border-box;
 	/*border-left: 5px solid #52ad9a;*/
-	border-top: 5px solid #52ad9a;
+	border-top: 5px solid var(--clr_main);
 }
 
 form  .formCategory:nth-of-type(1)
 {
-	border-top: 5px solid #c5d8c1;
+	border-top: 5px solid var(--clr_light);
 }
 
 input[type=text], textarea
@@ -525,10 +462,10 @@ input[type=submit]
 {
 	width: 100%;
 	height: auto;
-	background: #e8415a;
+	background: var(--clr_accent);
 	border: none;
 	color: white;
-	font-family: Cambria, 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+	font-family: var(--ff_serif);
 	font-size: 1.2em;
 	font-variant: small-caps;
 	font-weight: bold;
@@ -537,10 +474,15 @@ input[type=submit]
 	transition-duration: 0.5s;
 }
 
+:lang(jp) input[type=submit]
+{
+	font-family: var(--ff_serif_jp);
+}
+
 input[type=submit]:hover
 {
 	background: white;
-	color: #e8415a;
+	color: var(--clr_accent);
 }
 
 /*CONTENT --> Gallery================================================*/
@@ -548,26 +490,41 @@ input[type=submit]:hover
 .galleryContainer
 {
 	display: grid;
-	grid-template-columns: auto auto auto;
+	width: 100%;
+	grid-template-columns: 30% 30% 30%;
 	grid-gap: 10px;
-	padding: 10px;
+	justify-content: space-evenly;
+	text-align: center;
+	/*padding: 10px;*/
 	background-color: rgba(0,0,0,0.5);
 }
 
 .galleryContainer a
 {
 	text-decoration: none;
+	/*margin: 10px;*/
 }
 
 .thumbnail
 {
 	max-width: 75%;
 	height: auto;
+	transition: 0.2s;
+	opacity: 0.5;
+}
+
+.thumbnail:hover
+{
+	/*transform: scale(1.1,1.1);*/
+	opacity: 1;
 }
 
 .lightbox
 {
-	display: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	outline: none;
 	position: fixed;
 	z-index: 999;
 	width: 100%;
@@ -590,11 +547,12 @@ input[type=submit]:hover
 {
 	display: flex;
 	position: relative;
+	flex-direction: column;
 }
 
 .lightbox_content_img img
 {
-	height: 85vmin;
+	height: 80vmin;
 	max-height: 100%;
 	width: auto;
 	z-index: 1000;
@@ -643,15 +601,6 @@ input[type=submit]:hover
 	content: "\25B8";
 }
 
-/*.lightbox_content_dummyButton
-{
-	display: inline-flex;
-	position: absolute  !important;
-	width: 3em;
-	height: 3em;
-	top: 50%;
-}*/
-
 .lightbox_content_exit
 {
 	display: flex;
@@ -684,16 +633,20 @@ input[type=submit]:hover
 .v-center
 {
 	align-items: center !important;
-	text-align: center !important;
 }
 
 .h-center
 {
-	
+	text-align: center !important;
 	justify-content: center !important;
 }
+/*
+.lightbox h5
+{
+	display: block;
+}*/
 
-:lang(en) .lightbox h5:before
+/*:lang(en) .lightbox h5:before
 {
 	content: "Click or tap anywhere to return";
 }
@@ -706,14 +659,10 @@ input[type=submit]:hover
 :lang(jp) .lightbox h5:before
 {
 	content: "返るのにどこにもクリックかタップしてください";
-}
+}*/
 
-.lightbox:target
+.lightbox
 {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	outline: none;
 }
 
 /*FOOTER==================================================================*/
@@ -723,8 +672,8 @@ input[type=submit]:hover
 	position: fixed;
 	bottom: 0;
 	width: 100%;
-	border-top: 10px solid #c5d8c1;
-	background: #52ad9a;
+	border-top: 10px solid var(--clr_light);
+	background: var(--clr_main);
 	padding: 20px 0px;
 }
 
@@ -732,17 +681,17 @@ input[type=submit]:hover
 {
 	width: 60%;
 	margin: auto;
-	font-family: 'Caviar Dreams', Verdana, Geneva, sans-serif;
-	font-size: 18px;
+	font-family: var(--ff_sans);
+	font-size: 1.2em;
 	font-weight: bold;
-	color: #c5d8c1;
+	color: var(--clr_light);
 }
 
 div.smicon
 {
 	display: inline-block;
 	position: absolute;
-	left: o;
+	left: 0;
 	width: 20%;
 }
 
@@ -760,7 +709,7 @@ a.smicon svg
 
 a.smicon svg path
 {
-	fill: #c5d8c1 !important;
+	fill: var(--clr_light) !important;
 	transition-duration: 0.2s;
 }
 
@@ -779,8 +728,8 @@ a.smicon svg path:hover
 	margin-bottom: auto;
 	width: 20%;
 	float: right;
-	font-family: 'Caviar Dreams', Verdana, Geneva, sans-serif;
-	font-size: 15px;
+	font-family: var(--ff_sans);
+	font-size: 1.2em;
 	text-align: right;
 	color: #e6f3ea;
 }
@@ -866,6 +815,11 @@ a.smicon svg path:hover
 		margin-right: auto;
 		margin-bottom: 25px;
 	}
+	
+	.galleryContainer
+	{
+		grid-template-columns: 45% 45%;
+	}
 }
 
 @media only screen and (max-device-height: 800px), only screen and (max-height: 800px)
@@ -896,12 +850,6 @@ a.smicon svg path:hover
 		justify-content: center;
 	}
 	
-	/*a.nav
-	{
-		display: block;
-		margin: auto;
-	}*/
-	
 	a.nav:not(#home)
 	{
 		padding: 0px 0px 5px 0px;
@@ -921,6 +869,11 @@ a.smicon svg path:hover
 	#expSoftware div:nth-of-type(1)
 	{
 		border-top: 2px solid var(--clr_main);
+	}
+	
+	.galleryContainer
+	{
+		grid-template-columns: 90%;
 	}
 }
 
