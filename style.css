@@ -70,7 +70,7 @@ body
 {
 	color: white;
 	visibility: scroll;
-	background: #020410;
+	background: var(--clr_dark);
 	background: url("img/bgblue_64.png");
 	background: rgba(2,4,16,0.5), url("img/bgblue_64.png");
 	background: -webkit-linear-gradient(left, rgba(2,4,16,0.9), rgba(2,4,16,0.6), rgba(2,4,16,0.3), rgba(2,4,16.6), rgba(2,4,16,0.9)), url("img/bgblue_64.png");
@@ -111,19 +111,19 @@ a.nav:hover, #landingPage a:hover
 #header h1
 {
 	font-size: 2.82em;
-	font-family: --ff_serif;/*Cambria, 'Palatino Linotype', 'Book Antiqua', Palatino, serif;*/
+	font-family: var(--ff_serif);/*Cambria, 'Palatino Linotype', 'Book Antiqua', Palatino, serif;*/
 }
 
 #header h2
 {
 	font-size: 1em;
-	font-family: 'Caviar Dreams', Verdana, Geneva, sans-serif;
+	font-family: var(--ff_sans);
 	color: #e6f3ea;
 }
 
 :lang(jp) #header h2/*, #navlang a:lang(jp)*/
 {
-	font-family: 'Mplus 1p', Meiryo , 'ＭＳ ゴシック' , 'MS Gothic' , HiraKakuProN-W3 , 'TakaoExゴシック' , TakaoExGothic , 'MotoyaLCedar' , 'Droid Sans Japanese' , sans-serif;
+	font-family: var(--ff_sans_jp);
 }
 
 /*HEADER --> Text*/
@@ -491,32 +491,40 @@ input[type=submit]:hover
 {
 	display: grid;
 	width: 100%;
-	grid-template-columns: 30% 30% 30%;
+	grid-template-columns: auto auto auto;
 	grid-gap: 10px;
+	grid-row-gap: 5px;
 	justify-content: space-evenly;
 	text-align: center;
-	/*padding: 10px;*/
+	padding: 10px;
+	padding-bottom: 0;
 	background-color: rgba(0,0,0,0.5);
 }
 
 .galleryContainer a
 {
 	text-decoration: none;
-	/*margin: 10px;*/
+	margin: 0;
 }
 
 .thumbnail
 {
-	max-width: 75%;
+	max-width: 100%;
 	height: auto;
 	transition: 0.2s;
-	opacity: 0.5;
+	filter: brightness(50%);
+	padding: 0;
+}
+
+.thumbnail > img
+{
+	padding: 0;
 }
 
 .thumbnail:hover
 {
 	/*transform: scale(1.1,1.1);*/
-	opacity: 1;
+	filter: brightness(100%);
 }
 
 .lightbox
@@ -729,7 +737,7 @@ a.smicon svg path:hover
 	width: 20%;
 	float: right;
 	font-family: var(--ff_sans);
-	font-size: 1.2em;
+	font-size: 1em;
 	text-align: right;
 	color: #e6f3ea;
 }
@@ -738,7 +746,7 @@ a.smicon svg path:hover
 
 #copyright p span:after
 {
-	content: "\00a9 2018";
+	content: "\00a9 2019";
 }
 
 /*LANDING PAGE==================================================================*/
@@ -818,7 +826,7 @@ a.smicon svg path:hover
 	
 	.galleryContainer
 	{
-		grid-template-columns: 45% 45%;
+		grid-template-columns: auto auto;
 	}
 }
 
@@ -873,7 +881,7 @@ a.smicon svg path:hover
 	
 	.galleryContainer
 	{
-		grid-template-columns: 90%;
+		grid-template-columns: auto;
 	}
 }
 

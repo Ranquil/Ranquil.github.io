@@ -1,7 +1,7 @@
 var langCodes = ["en", "fi", "jp"];
 var langNames = ["English", "Suomi", "日本語"];
-var pageFiles = ["home.html", "#", "exp.html", "contact.html"];
-var pageIds = ["home", "gallery", "experience", "contact"];
+/*var pageFiles = ["home.html", "#", "exp.html", "contact.html"];
+var pageIds = ["home", "gallery", "experience", "contact"];*/
 
 class NavigationItem
 {
@@ -54,6 +54,21 @@ var digitalImgFiles =
 var tradImgFiles =
 [
 	new GalleryImage(
+	`galactic`,
+	`Watercolor Portrait`,
+	`Vesivärimuotokuva`,
+	`水彩肖像画`),
+	new GalleryImage(
+	`mettja`,
+	`Watercolor Painting`,
+	`Vesivärimaalaus`,
+	`水彩画`),
+	new GalleryImage(
+	`lady`,
+	`Watercolor Painting`,
+	`Vesivärimaalaus`,
+	`水彩画`),
+	new GalleryImage(
 	`whale`,
 	`Inktober piece`,
 	`Inktober-työ`,
@@ -69,6 +84,20 @@ var fileName = url.substring(url.lastIndexOf('/')+1);
 var lang = url.substring(url.lastIndexOf('/')-2).substr(0, 2);
 
 
+
+document.addEventListener("DOMContentLoaded", function()
+{
+	switch (fileName)
+	{
+		case "index.html":
+		redirectByLang();
+		break;
+		case "gallery.html":
+		gallerySetup();
+		default:
+		pageInit();
+	}
+});
 
 function pageInit()
 {
