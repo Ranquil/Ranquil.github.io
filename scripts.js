@@ -24,9 +24,10 @@ var navItems =
 
 class GalleryImage
 {
-	constructor (fileName, name__en, name__fi, name__jp)
+	constructor (fileName, format, name__en, name__fi, name__jp)
 	{
 		this.fileName	= fileName;
+		this.format		= format;
 		this.name__en	= name__en;
 		this.name__fi	= name__fi;
 		this.name__jp	= name__jp;
@@ -37,39 +38,64 @@ var digitalImgFiles =
 [
 	new GalleryImage(
 	`limos`,
+	`jpg`,
 	`Album Cover for Limos`,
 	`Levynkansi Limos-bändille`,
 	`「リモス」にアルバムカバー`),
 	new GalleryImage(
 	`jigazou`,
+	`jpg`,
 	`Self-portrait`,
 	`Omakuva`,
 	`自画像`),
 	new GalleryImage(
 	`sky`,
+	`jpg`,
 	`Digital Painting`,
 	`Digitaalinen maalaus`,
-	`デジタル絵画`)
+	`デジタル絵画`),
+	new GalleryImage(
+	`bcard`,
+	`jpg`,
+	`Business Card Design`,
+	`Käyntikorttimalli`,
+	`名刺デザイン`)
 ];
 var tradImgFiles =
 [
 	new GalleryImage(
 	`galactic`,
+	`jpg`,
 	`Watercolor Portrait`,
 	`Vesivärimuotokuva`,
 	`水彩肖像画`),
 	new GalleryImage(
 	`mettja`,
+	`jpg`,
 	`Watercolor Painting`,
 	`Vesivärimaalaus`,
 	`水彩画`),
 	new GalleryImage(
 	`lady`,
+	`jpg`,
 	`Watercolor Painting`,
 	`Vesivärimaalaus`,
 	`水彩画`),
 	new GalleryImage(
+	`gift`,
+	`jpg`,
+	`Inktober piece`,
+	`Inktober-työ`,
+	`「Inktober」作品`),
+	new GalleryImage(
+	`hands`,
+	`jpg`,
+	`Inktober piece`,
+	`Inktober-työ`,
+	`「Inktober」作品`),
+	new GalleryImage(
 	`whale`,
+	`jpg`,
 	`Inktober piece`,
 	`Inktober-työ`,
 	`「Inktober」作品`)
@@ -83,6 +109,54 @@ var url = window.location.pathname;
 var fileName = url.substring(url.lastIndexOf('/')+1);
 var lang = url.substring(url.lastIndexOf('/')-2).substr(0, 2);
 
+var closeButtonSvg =
+`<?xml version="1.0" encoding="UTF-8"?>
+<svg width="50" height="50" version="1.1" viewBox="0 0 13.229167 13.229167" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<metadata>
+<rdf:RDF>
+<cc:Work rdf:about="">
+<dc:format>image/svg+xml</dc:format>
+<dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+<dc:title/>
+</cc:Work>
+</rdf:RDF>
+</metadata>
+<g transform="translate(434.31 -64.179)">
+<path d="m-427.69 64.179a6.6147 6.6147 0 0 0 -6.6146 6.6149 6.6147 6.6147 0 0 0 6.6146 6.6146 6.6147 6.6147 0 0 0 6.6146 -6.6146 6.6147 6.6147 0 0 0 -6.6146 -6.6149zm0 0.8026a5.8122 5.8122 0 0 1 5.8123 5.8123 5.8122 5.8122 0 0 1 -5.8123 5.812 5.8122 5.8122 0 0 1 -5.8123 -5.812 5.8122 5.8122 0 0 1 5.8123 -5.8123zm3.011 2.2335-3.011 3.0113-3.0078-3.0084a4.6773 4.6773 0 0 0 -0.57092 0.5645l3.0114 3.0113-3.0078 3.0081a4.6773 4.6773 0 0 0 0.56419 0.57062l3.0111-3.0111 3.0078 3.0078a4.6773 4.6773 0 0 0 0.57092 -0.56421l-3.0111-3.0113 3.0079-3.0078a4.6773 4.6773 0 0 0 -0.56451 -0.57091z" fill="#226464"/>
+</g>
+</svg>`;
+var prevButtonSvg =
+`<?xml version="1.0" encoding="UTF-8"?>
+<svg width="13.229mm" height="26.458mm" version="1.1" viewBox="0 0 13.229439 26.458334" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<metadata>
+<rdf:RDF>
+<cc:Work rdf:about="">
+<dc:format>image/svg+xml</dc:format>
+<dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+<dc:title/>
+</cc:Work>
+</rdf:RDF>
+</metadata>
+<g transform="translate(574.77 -70.172)">
+<path d="m-561.54 96.63-13.229-13.229 13.229-13.229z" fill="#226464"/>
+</g>
+</svg>`;
+var nextButtonSvg =
+`<?xml version="1.0" encoding="UTF-8"?>
+<svg width="13.229mm" height="26.458mm" version="1.1" viewBox="0 0 13.229439 26.458334" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<metadata>
+<rdf:RDF>
+<cc:Work rdf:about="">
+<dc:format>image/svg+xml</dc:format>
+<dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+<dc:title/>
+</cc:Work>
+</rdf:RDF>
+</metadata>
+<g transform="translate(574.77 -70.172)">
+<path d="m-574.77 96.63 13.229-13.229-13.229-13.229z" fill="#226464"/>
+</g>
+</svg>`;
 
 
 document.addEventListener("DOMContentLoaded", function()
@@ -97,6 +171,15 @@ document.addEventListener("DOMContentLoaded", function()
 		default:
 		pageInit();
 	}
+});
+
+window.addEventListener("resize", function()
+{
+	resizeImage();
+});
+window.addEventListener("orientationchange", function()
+{
+	resizeImage();
 });
 
 function pageInit()
@@ -154,40 +237,16 @@ function redirectByLang()
 
 function gallerySetup()
 {
-	/*document.getElementById("digital").innerHTML = setImgs(digitalImgFiles, "digital");
-	document.getElementById("trad").innerHTML = setImgs(tradImgFiles, "trad");
-	
-	document.getElementById("lightboxStorage").innerHTML = setLightboxes(digitalImgFiles, "digital") + setLightboxes(tradImgFiles, "trad");*/
-	
 	document.getElementById("digital").innerHTML = setImgButtons(digitalImgFiles, "digitalImgFiles");
 	document.getElementById("trad").innerHTML = setImgButtons(tradImgFiles, "tradImgFiles");
-}
-
-function setImgs(imgs, category)
-{
-	var htmlCode = "";
-	
-	for (var i = 0; i < imgs.length; i++)
-	{
-		htmlCode +=	`<a href="#preview_${imgs[i].fileName}"><img class="thumbnail" src="../img/gallery/${imgs[i].fileName}_small.jpg"></a>`;
-	}
-	
-	return htmlCode;
 }
 
 function setImgButtons(imgs, categoryName)
 {
 	var htmlCode = "";
 	
-	console.log(categoryName);
-	
 	for (var i = 0; i < imgs.length; i++)
 	{
-		/*var imgIndex = imgs.findIndex(function (element)
-		{
-			return element == img;
-		});*/
-		
 		htmlCode +=	`<a onclick='createLightbox("${categoryName}", ${i})'><img class="thumbnail" src="../img/gallery/${imgs[i].fileName}_small.jpg"></a>`;
 	}
 	
@@ -201,37 +260,97 @@ function createLightbox(categoryName, imgIndex)
 	var htmlCode = "";
 	var imgNameVar = "name__" + lang;
 	
-	var imgs = eval(categoryName);	/* I know, I know, I shouldn't use eval(), but I can't find any other way to do this, sorry. */
-	var img = imgs[imgIndex]
+	var imgs = eval(categoryName);	/* I know, I know, I shouldn't use eval(), but I can't find any other way to do this in native JS, sorry. */
+	var img = imgs[imgIndex];
 	var imgsLengthIndex = imgs.length; imgsLengthIndex--;
-	console.log(img);
 	var imgIndexPrev = imgIndex; imgIndexPrev--;
 	var imgIndexNext = imgIndex; imgIndexNext++;
-	/*var imgPrevData = JSON.stringify(imgs[imgIndexPrev]);
-	var imgNextData = JSON.stringify(imgs[imgIndexNext]);*/
 	
 	htmlCode += `<div id="preview_${img.fileName}" class="lightbox">
 	<div class="lightbox_content h-center v-center">`;
 	if (imgIndex > 0)
 	{
-		htmlCode += `<a class="lightbox_content_previous v-center" onclick='createLightbox("${categoryName}", ${imgIndexPrev})'></a>`;
+		htmlCode += `<a class="lightbox_content_previous v-center" onclick='createLightbox("${categoryName}", ${imgIndexPrev})'>${prevButtonSvg}</a>`;
 	}
-	htmlCode += `<div class="lightbox_content_img">
-	<img src="../img/gallery/${img.fileName}_big.jpg">
+	htmlCode += `<div id="imgDiv" class="lightbox_content_img">
+	<img id="lightboxImg" onload="resizeImage()" src="../img/gallery/${img.fileName}_big.${img.format}">
 	<h5>${img[imgNameVar]}</h5>
 	</div>`;
 	if (imgIndex < imgsLengthIndex && imgs.length > 1)
 	{
-		htmlCode += `<a class="lightbox_content_next v-center" onclick='createLightbox("${categoryName}", ${imgIndexNext})'></a>`;
+		htmlCode += `<a class="lightbox_content_next v-center" onclick='createLightbox("${categoryName}", ${imgIndexNext})'>${nextButtonSvg}</a>`;
 	}
-	htmlCode += `<a class="lightbox_content_exit h-center v-center" onclick="document.getElementById('lightboxStorage').innerHTML = ''"></a>
+	htmlCode += `<a class="lightbox_content_exit h-center v-center" onclick="document.getElementById('lightboxStorage').innerHTML = ''">${closeButtonSvg}</a>
 	</div>
 	</div>`;
 	
 	document.getElementById("lightboxStorage").innerHTML = htmlCode;
 }
 
-function setLightboxes(imgs, category)
+function resizeImage()
+{
+	var parentDiv = document.getElementById("imgDiv");
+	
+	if (parentDiv != null)
+	{ 
+		var img = document.getElementById("lightboxImg");
+		var divTrueHeight = parentDiv.clientHeight; divTrueHeight -= 30;
+		var imgRatio = img.naturalWidth; imgRatio /= img.naturalHeight;
+		var divRatio = parentDiv.clientWidth; divRatio /= divTrueHeight;
+		var resWidth, resHeight;
+		
+		if (img.naturalWidth > parentDiv.width || img.naturalHeight > divTrueHeight)
+		{
+			var divMin = Math.min(parentDiv.clientWidth, divTrueHeight);
+		
+			if (imgRatio == 1)
+			{
+				resWidth = divMin;
+				resHeight = divMin;
+			}
+			else if (imgRatio < 1)
+			{
+				resHeight = divMin;
+				resWidth = divMin;
+				if (divRatio >= 1)
+					resWidth *= imgRatio;
+				else
+					resHeight /= imgRatio;
+				if (resHeight > divTrueHeight)
+				{
+					resHeight = divTrueHeight;
+					resWidth = divTrueHeight;
+					resWidth *= imgRatio;
+				}
+			}
+			else if (imgRatio > 1)
+			{
+				resWidth = divMin;
+				resHeight = divMin;
+				if (divRatio > 1)
+					resWidth *= imgRatio;
+				else
+					resHeight /= imgRatio;
+				if (resWidth > parentDiv.clientWidth)
+				{
+					resWidth = parentDiv.clientWidth;
+					resHeight = parentDiv.clientWidth;
+					resHeight /= imgRatio;
+				}
+			}
+		}
+		else
+		{
+			resHeight = img.naturalHeight;
+			resWidth = img.naturalWidth;
+		}
+			
+		img.width = resWidth;
+		img.height = resHeight;
+	}
+}
+
+/*function setLightboxes(imgs, category)
 {
 	var htmlCode = "";
 	
@@ -248,7 +367,7 @@ function setLightboxes(imgs, category)
 		if (i > 0)
 		{
 			var prevImg = i; prevImg--;
-			htmlCode += `<a class='lightbox_content_previous v-center' href='#preview_${imgs[prevImg].fileName}'></a>`;
+			htmlCode += `<a class='lightbox_content_previous v-center' href='#preview_${imgs[prevImg].fileName}'>${prevButtonSvg}</a>`;
 		}
 		htmlCode += `<div class='lightbox_content_img'>
 		<img src='../img/gallery/${img.fileName}_big.jpg'>
@@ -257,13 +376,13 @@ function setLightboxes(imgs, category)
 		if (i < imgsLengthIndex && imgs.length > 1)
 		{
 			var nextImg = i; nextImg++;
-			htmlCode += `<a class='lightbox_content_next v-center' href='#preview_${imgs[nextImg].fileName}'></a>`;
+			htmlCode += `<a class='lightbox_content_next v-center' href='#preview_${imgs[nextImg].fileName}'>${nextButtonSvg}</a>`;
 		}
 		htmlCode += `<a class='lightbox_content_exit h-center v-center' href='#${category}'></a></div></div>`;
 	}
 	
 	return htmlCode;
-}
+}*/
 
 function sendEmail(e, userLang)
 {

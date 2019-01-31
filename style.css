@@ -102,6 +102,7 @@ a.nav:hover, #landingPage a:hover
 	position: sticky;
 	top: 0;
 	padding-top: 1px;
+	z-index: 998;
 	border-bottom: 10px solid var(--clr_light)/*#c5d8c1*/;
 	background: var(--clr_main);
 	text-align: center;
@@ -270,7 +271,7 @@ a.nav:hover span.nav:before, a.nav:hover span.nav:after, #landingPage a:hover sp
 
 :lang(jp) #content
 {
-	font-family: 'Mplus 1p', Meiryo , 'ＭＳ ゴシック' , 'MS Gothic' , HiraKakuProN-W3 , 'TakaoExゴシック' , TakaoExGothic , 'MotoyaLCedar' , 'Droid Sans Japanese' , sans-serif;
+	font-family: var(--ff_sans_jp);
 	font-size: 16px;
 }
 
@@ -426,12 +427,9 @@ ul
 
 .formCategory
 {
-	background: #00000033;/*
-	background: -webkit-linear-gradient(left, #00000011, #00000000), -webkit-linear-gradient(up, #00000011, #00000000);
-	background: linear-gradient(to right, #00000011, #00000000), linear-gradient(to down, #00000011, #00000000);*/
+	background: #00000033;
 	padding: 10px 15px 2px 15px;
 	box-sizing: border-box;
-	/*border-left: 5px solid #52ad9a;*/
 	border-top: 5px solid var(--clr_main);
 }
 
@@ -493,16 +491,16 @@ input[type=submit]:hover
 	width: 100%;
 	grid-template-columns: auto auto auto;
 	grid-gap: 10px;
-	grid-row-gap: 5px;
 	justify-content: space-evenly;
 	text-align: center;
 	padding: 10px;
-	padding-bottom: 0;
 	background-color: rgba(0,0,0,0.5);
 }
 
 .galleryContainer a
 {
+	display: flex;
+	align-items: center;
 	text-decoration: none;
 	margin: 0;
 }
@@ -523,8 +521,8 @@ input[type=submit]:hover
 
 .thumbnail:hover
 {
-	/*transform: scale(1.1,1.1);*/
 	filter: brightness(100%);
+	box-shadow: 0 0 5px var(--clr_light);
 }
 
 .lightbox
@@ -554,30 +552,45 @@ input[type=submit]:hover
 .lightbox_content_img
 {
 	display: flex;
-	position: relative;
+	/*position: relative;*/
+	justify-content: center;
+	width: calc(100vw - 40px);
+	height: calc(100vh - 40px);
 	flex-direction: column;
 }
 
 .lightbox_content_img img
 {
-	height: 80vmin;
-	max-height: 100%;
-	width: auto;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 	z-index: 1000;
 }
+
+/*.lightbox_content_img_tall
+{
+	height: 85;
+	width: auto;
+}
+
+.lightbox_content_img_wide
+{
+	width: 100%;
+	height: auto;
+}*/
 
 .lightbox_content_previous, .lightbox_content_next
 {
 	display: flex;
 	position: fixed;
-	width: 75px;
 	height: 75px;
-	/*top: 50%;*/
+	width: auto;
+	/*top: 50%;
 	font-size: 100px;
-	color: var(--clr_main) !important;
+	color: var(--clr_main) !important;*/
 	text-decoration: none;
+	filter: drop-shadow(0 0 5px black);
 	opacity: 0.5;
-	transform: scale(1,2);
 	transition-duration: 0.2s;
 }
 
@@ -593,7 +606,7 @@ input[type=submit]:hover
 	z-index: 1002;
 }
 
-.lightbox_content_previous:hover, .lightbox_content_next:hover
+/*.lightbox_content_previous:hover, .lightbox_content_next:hover
 {
 	opacity: 1;
 	transform: scale(1.1,2.2);
@@ -607,32 +620,56 @@ input[type=submit]:hover
 .lightbox_content_next:after
 {
 	content: "\25B8";
-}
+}*/
 
 .lightbox_content_exit
 {
 	display: flex;
 	position: fixed;
-	width: 75px;
-	height: 75px;
+	width: 100px;
+	height: 100px;
 	top: 1vmax;
 	right: 1vmax;
 	z-index: 1003;
-	font-size: 50px;
+	/*font-size: 50px;
 	color: var(--clr_light) !important;
-	text-decoration: none;
 	border: 5px solid var(--clr_light);
-	border-radius: 50%;
+	border-radius: 50%;*/
+	text-decoration: none;
 	opacity: 0.5;
+	filter: drop-shadow(0 0 5px black);
 	transition-duration: 0.2s;
 }
 
-.lightbox_content_exit:after
+.lightbox_content_exit > svg path
 {
-	content: "X";
+	height: 100%;
+	width: 100%;
+	fill: var(--clr_light);
 }
 
-.lightbox_content_exit:hover
+/*.lightbox_content_prev, .lightbox_content_next
+{
+	display: flex;
+	position: fixed;
+	height: 100%;
+	width: auto;
+	
+}*/
+
+.lightbox_content_previous  svg path, .lightbox_content_next  svg path
+{
+	height: 100%;
+	width: auto;
+	fill: var(--clr_main);
+}
+
+/*.lightbox_content_exit:after
+{
+	content: "X";
+}*/
+
+.lightbox_content_exit:hover, .lightbox_content_previous:hover, .lightbox_content_next:hover
 {
 	opacity: 1;
 	transform: scale(1.1,1.1);
@@ -647,30 +684,6 @@ input[type=submit]:hover
 {
 	text-align: center !important;
 	justify-content: center !important;
-}
-/*
-.lightbox h5
-{
-	display: block;
-}*/
-
-/*:lang(en) .lightbox h5:before
-{
-	content: "Click or tap anywhere to return";
-}
-
-:lang(fi) .lightbox h5:before
-{
-	content: "Napsauta tai kosketa minne vain palataksesi";
-}
-
-:lang(jp) .lightbox h5:before
-{
-	content: "返るのにどこにもクリックかタップしてください";
-}*/
-
-.lightbox
-{
 }
 
 /*FOOTER==================================================================*/
@@ -721,7 +734,7 @@ a.smicon svg path
 	transition-duration: 0.2s;
 }
 
-a.smicon svg path:hover
+a.smicon:hover svg path
 {
 	fill: white !important;
 }
