@@ -59,7 +59,13 @@ var digitalImgFiles =
 	`jpg`,
 	`Business Card Design`,
 	`Käyntikorttimalli`,
-	`名刺デザイン`)
+	`名刺デザイン`),
+	new GalleryImage(
+	`majyokko`,
+	`jpg`,
+	`Digital Ink Drawing`,
+	`Digitaalinen mustepiirros`,
+	`デジタルの墨書き`)
 ];
 var tradImgFiles =
 [
@@ -86,23 +92,40 @@ var tradImgFiles =
 	`jpg`,
 	`Inktober piece`,
 	`Inktober-työ`,
-	`「Inktober」作品`),
+	`「<span lang="en">Inktober</span>」作品`),
 	new GalleryImage(
 	`hands`,
 	`jpg`,
 	`Inktober piece`,
 	`Inktober-työ`,
-	`「Inktober」作品`),
+	`「<span lang="en">Inktober</span>」作品`),
 	new GalleryImage(
 	`whale`,
 	`jpg`,
 	`Inktober piece`,
 	`Inktober-työ`,
-	`「Inktober」作品`)
+	`「<span lang="en">Inktober</span>」作品`)
 ];
 var gameArtImgFiles =
 [
-
+	new GalleryImage(
+	`gameover`,
+	`jpg`,
+	`Game Over Illustration for a Jam Game`,
+	`Game Over -kuvitus jamipeliin`,
+	`ジャムゲームにゲームオーバー挿絵`),
+	new GalleryImage(
+	`icons`,
+	`jpg`,
+	`Achievement Icons for FinSummerVR`,
+	`Achievement-ikoneja FinSummerVR:ään`,
+	`「<span lang="en">FinSummerVR</span>」にアチーブメント・アイコン`),
+	new GalleryImage(
+	`flan`,
+	`gif`,
+	`Enemy Animation`,
+	`Vihollisanimaatio`,
+	`敵アニメーション`)
 ];
 
 var url = window.location.pathname;
@@ -182,6 +205,29 @@ window.addEventListener("orientationchange", function()
 	resizeImage();
 });
 
+window.addEventListener("keydown", function(event)
+{
+	if (fileName == "gallery.html" && document.getElementById("imgDiv") != null)
+	{
+		var key = event.which || event.keyCode;
+		
+		switch (key)
+		{
+			case 27:
+			document.getElementById("close").click();
+			break;
+			case 37:
+			document.getElementById("prev").click();
+			break;
+			case 39:
+			document.getElementById("next").click();
+			break;
+		}
+	}
+});
+
+/* ----------------------------------------------------------*/
+
 function pageInit()
 {
 	langLink();
@@ -239,6 +285,7 @@ function gallerySetup()
 {
 	document.getElementById("digital").innerHTML = setImgButtons(digitalImgFiles, "digitalImgFiles");
 	document.getElementById("trad").innerHTML = setImgButtons(tradImgFiles, "tradImgFiles");
+	document.getElementById("2d").innerHTML = setImgButtons(gameArtImgFiles, "gameArtImgFiles");
 }
 
 function setImgButtons(imgs, categoryName)
@@ -270,17 +317,17 @@ function createLightbox(categoryName, imgIndex)
 	<div class="lightbox_content h-center v-center">`;
 	if (imgIndex > 0)
 	{
-		htmlCode += `<a class="lightbox_content_previous v-center" onclick='createLightbox("${categoryName}", ${imgIndexPrev})'>${prevButtonSvg}</a>`;
+		htmlCode += `<a id="prev" class="lightbox_content_previous v-center" onclick='createLightbox("${categoryName}", ${imgIndexPrev})' onkeydown="navigateLightboxViaKeyboard(event)">${prevButtonSvg}</a>`;
 	}
 	htmlCode += `<div id="imgDiv" class="lightbox_content_img">
 	<img id="lightboxImg" onload="resizeImage()" src="../img/gallery/${img.fileName}_big.${img.format}">
-	<h5>${img[imgNameVar]}</h5>
+	<h5>${imgIndexNext}/${imgs.length}: ${img[imgNameVar]}</h5>
 	</div>`;
 	if (imgIndex < imgsLengthIndex && imgs.length > 1)
 	{
-		htmlCode += `<a class="lightbox_content_next v-center" onclick='createLightbox("${categoryName}", ${imgIndexNext})'>${nextButtonSvg}</a>`;
+		htmlCode += `<a id="next" class="lightbox_content_next v-center" onclick='createLightbox("${categoryName}", ${imgIndexNext})' onkeydown="navigateLightboxViaKeyboard(event)">${nextButtonSvg}</a>`;
 	}
-	htmlCode += `<a class="lightbox_content_exit h-center v-center" onclick="document.getElementById('lightboxStorage').innerHTML = ''">${closeButtonSvg}</a>
+	htmlCode += `<a id="close" class="lightbox_content_exit h-center v-center" onclick="document.getElementById('lightboxStorage').innerHTML = ''" onkeydown="navigateLightboxViaKeyboard(event)">${closeButtonSvg}</a>
 	</div>
 	</div>`;
 	
@@ -349,40 +396,6 @@ function resizeImage()
 		img.height = resHeight;
 	}
 }
-
-/*function setLightboxes(imgs, category)
-{
-	var htmlCode = "";
-	
-	var imgNameVar = "name__" + lang;
-	
-	var imgsLengthIndex = imgs.length; imgsLengthIndex--;
-	
-	for (var i = 0; i < imgs.length; i++)
-	{
-		var img = imgs[i];
-		
-		htmlCode += `<div id='preview_${img.fileName}' class='lightbox'>
-		<div class='lightbox_content h-center v-center'>`;
-		if (i > 0)
-		{
-			var prevImg = i; prevImg--;
-			htmlCode += `<a class='lightbox_content_previous v-center' href='#preview_${imgs[prevImg].fileName}'>${prevButtonSvg}</a>`;
-		}
-		htmlCode += `<div class='lightbox_content_img'>
-		<img src='../img/gallery/${img.fileName}_big.jpg'>
-		<h5>${img[imgNameVar]}</h5>
-		</div>`;
-		if (i < imgsLengthIndex && imgs.length > 1)
-		{
-			var nextImg = i; nextImg++;
-			htmlCode += `<a class='lightbox_content_next v-center' href='#preview_${imgs[nextImg].fileName}'>${nextButtonSvg}</a>`;
-		}
-		htmlCode += `<a class='lightbox_content_exit h-center v-center' href='#${category}'></a></div></div>`;
-	}
-	
-	return htmlCode;
-}*/
 
 function sendEmail(e, userLang)
 {

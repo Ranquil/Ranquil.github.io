@@ -319,6 +319,19 @@ a.nav:hover span.nav:before, a.nav:hover span.nav:after, #landingPage a:hover sp
 	/*border: 5px solid #e8415a;*/
 }
 
+#homeContent svg
+{
+	display: block;
+	height: 75px;
+	width: auto;
+	padding-top: 20px;
+}
+
+#homeContent svg path
+{
+	fill: var(--clr_light);
+}
+
 #expSoftware
 {
 	display: flex;
@@ -832,9 +845,13 @@ a.smicon:hover svg path
 	#homeContent img
 	{
 		float: none;
+		margin-bottom: 25px;
+	}
+	
+	#homeContent img, #homeContent svg
+	{
 		margin-left: auto;
 		margin-right: auto;
-		margin-bottom: 25px;
 	}
 	
 	.galleryContainer
