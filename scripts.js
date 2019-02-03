@@ -125,7 +125,13 @@ var gameArtImgFiles =
 	`gif`,
 	`Enemy Animation`,
 	`Vihollisanimaatio`,
-	`敵アニメーション`)
+	`敵アニメーション`),
+	new GalleryImage(
+	`mahouen`,
+	`gif`,
+	`Vector Magic Circle`,
+	`Vektoritaikaympyrä`,
+	`ベクトル魔法円`)
 ];
 
 var url = window.location.pathname;
@@ -186,10 +192,6 @@ document.addEventListener("DOMContentLoaded", function()
 {
 	switch (fileName)
 	{
-		/*case "index.html":
-		case "ranquil.github.io":
-		redirectByLang();
-		break;*/
 		case "gallery.html":
 		gallerySetup();
 		default:
