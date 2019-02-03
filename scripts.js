@@ -184,6 +184,7 @@ var nextButtonSvg =
 
 document.addEventListener("DOMContentLoaded", function()
 {
+	console.log(fileName);
 	switch (fileName)
 	{
 		case "index.html":
