@@ -184,10 +184,10 @@ var nextButtonSvg =
 
 document.addEventListener("DOMContentLoaded", function()
 {
-	console.log(fileName);
 	switch (fileName)
 	{
 		case "index.html":
+		case "ranquil.github.io":
 		redirectByLang();
 		break;
 		case "gallery.html":
