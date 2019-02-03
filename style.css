@@ -28,31 +28,6 @@ html
 	padding: 0;
 }
 
-/*$vars: 
-(
-	ff_serif: Cambria, 'Palatino Linotype', 'Book Antiqua', Palatino, serif,
-	ff_sans: 'Caviar Dreams', Verdana, Geneva, sans-serif,
-	ff_serif_jp: Hannari, '游明朝','游明朝体',YuMincho,'Yu Mincho' , 'ＭＳ 明朝' , 'MS Mincho' , HiraMinProN-W3 , 'TakaoEx明朝' , TakaoExMincho , 'MotoyaLCedar' , 'Droid Sans Japanese' , serif,
-	ff_sans_jp: 'Mplus 1p', Meiryo , 'ＭＳ ゴシック' , 'MS Gothic' , HiraKakuProN-W3 , 'TakaoExゴシック' , TakaoExGothic , 'MotoyaLCedar' , 'Droid Sans Japanese' , sans-serif,
-	clr_main: #52ad9a,
-	clr_light: #c5d8c1,
-	clr_dark: #020410,
-	clr_accent: #e8415a
-);
-
-@mixin var($property, $variable)
-{
-	#{$property}: var(--#{$variable});
-}
-
-:root
-{
-	@each $property, $value in $vars
-	{
-		--#{property}: #{$value};
-	}
-}*/
-
 :root
 {
 	--ff_serif: Cambria, 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
@@ -103,7 +78,7 @@ a.nav:hover, #landingPage a:hover
 	top: 0;
 	padding-top: 1px;
 	z-index: 998;
-	border-bottom: 10px solid var(--clr_light)/*#c5d8c1*/;
+	border-bottom: 10px solid var(--clr_light);
 	background: var(--clr_main);
 	text-align: center;
 	font-size: 18px;
@@ -112,7 +87,7 @@ a.nav:hover, #landingPage a:hover
 #header h1
 {
 	font-size: 2.82em;
-	font-family: var(--ff_serif);/*Cambria, 'Palatino Linotype', 'Book Antiqua', Palatino, serif;*/
+	font-family: var(--ff_serif);
 }
 
 #header h2
@@ -122,7 +97,7 @@ a.nav:hover, #landingPage a:hover
 	color: #e6f3ea;
 }
 
-:lang(jp) #header h2/*, #navlang a:lang(jp)*/
+:lang(jp) #header h2
 {
 	font-family: var(--ff_sans_jp);
 }
@@ -155,14 +130,13 @@ a.nav:hover, #landingPage a:hover
 
 a.nav
 {
-	/*width: 140px;*/
 	font-family: var(--ff_serif);
 	font-size: 16px;
 	font-variant: small-caps;
 	text-align: center;
 	font-weight: bold;
 	text-decoration: none;
-	color: var(--clr_light);/*#c5d8c1;*/
+	color: var(--clr_light);
 	padding: 10px 5px;
 	vertical-align: middle;
 	display: inline-block;
@@ -255,8 +229,13 @@ a.nav:hover span.nav:before, a.nav:hover span.nav:after, #landingPage a:hover sp
 #content p
 {
 	line-height: 1.6;
-	color: white;/*#e6f3ea;*/
+	color: white;
 	margin-bottom: 10px;
+}
+
+#content b
+{
+	text-shadow: 0px 1px 1px var(--clr_main);
 }
 
 #content a:link
@@ -296,7 +275,7 @@ a.nav:hover span.nav:before, a.nav:hover span.nav:after, #landingPage a:hover sp
 :lang(jp) #content b
 {
 	font-weight: bolder;
-	color: #c5d8c1;
+	color: var(--clr_light);
 }
 
 #homeContent, #contactContent
@@ -316,7 +295,6 @@ a.nav:hover span.nav:before, a.nav:hover span.nav:after, #landingPage a:hover sp
 	float: right;
 	margin: 0px 0px 50px 50px;
 	border-radius: 50%;
-	/*border: 5px solid #e8415a;*/
 }
 
 #homeContent svg
@@ -344,7 +322,6 @@ a.nav:hover span.nav:before, a.nav:hover span.nav:after, #landingPage a:hover sp
 	background: rgba(0,0,0,0.5);
 	border: 2px solid #52ad9a;
 	border-left: none;
-	/*margin: 0px 5px;*/
 }
 
 #expSoftware div:nth-of-type(1)
@@ -365,26 +342,15 @@ hr
 
 h3
 {
-	font-family: Cambria, 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+	font-family: var(--ff_serif);
 	font-size: 1.25em;
 	font-variant: small-caps;
-	color: white;/*#e6f3ea;*/
+	color: white;
 	background: #52ad9a;
 	background: #52ad9acc;
 	padding: 10px 13px;
 	border-left: 15px solid #c5d8c1;
 }
-
-/*#expContent h3
-{
-	color: #e8415a;
-	background: #e6f3ea;
-	background: -webkit-linear-gradient(left, white, #dddddd);#c5d8c100 #e6f3ea
-	background: linear-gradient(to right, white, #dddddd);
-	padding: 10px;
-	margin: 10px 0px;
-	border-left: 15px solid #52ad9a;
-}*/
 
 #contactContent h3
 {
@@ -557,15 +523,11 @@ input[type=submit]:hover
 .lightbox_content
 {
 	display: flex;
-	/*height: 90%;
-	width: auto;
-	min-width: 90vw;*/
 }
 
 .lightbox_content_img
 {
 	display: flex;
-	/*position: relative;*/
 	justify-content: center;
 	width: calc(100vw - 40px);
 	height: calc(100vh - 40px);
@@ -580,27 +542,12 @@ input[type=submit]:hover
 	z-index: 1000;
 }
 
-/*.lightbox_content_img_tall
-{
-	height: 85;
-	width: auto;
-}
-
-.lightbox_content_img_wide
-{
-	width: 100%;
-	height: auto;
-}*/
-
 .lightbox_content_previous, .lightbox_content_next
 {
 	display: flex;
 	position: fixed;
 	height: 75px;
 	width: auto;
-	/*top: 50%;
-	font-size: 100px;
-	color: var(--clr_main) !important;*/
 	text-decoration: none;
 	filter: drop-shadow(0 0 5px black);
 	opacity: 0.5;
@@ -619,22 +566,6 @@ input[type=submit]:hover
 	z-index: 1002;
 }
 
-/*.lightbox_content_previous:hover, .lightbox_content_next:hover
-{
-	opacity: 1;
-	transform: scale(1.1,2.2);
-}
-
-.lightbox_content_previous:after
-{
-	content: "\25C2";
-}
-
-.lightbox_content_next:after
-{
-	content: "\25B8";
-}*/
-
 .lightbox_content_exit
 {
 	display: flex;
@@ -644,10 +575,6 @@ input[type=submit]:hover
 	top: 1vmax;
 	right: 1vmax;
 	z-index: 1003;
-	/*font-size: 50px;
-	color: var(--clr_light) !important;
-	border: 5px solid var(--clr_light);
-	border-radius: 50%;*/
 	text-decoration: none;
 	opacity: 0.5;
 	filter: drop-shadow(0 0 5px black);
@@ -658,17 +585,8 @@ input[type=submit]:hover
 {
 	height: 100%;
 	width: 100%;
-	fill: var(--clr_light);
+	fill: var(--clr_main);
 }
-
-/*.lightbox_content_prev, .lightbox_content_next
-{
-	display: flex;
-	position: fixed;
-	height: 100%;
-	width: auto;
-	
-}*/
 
 .lightbox_content_previous  svg path, .lightbox_content_next  svg path
 {
@@ -676,11 +594,6 @@ input[type=submit]:hover
 	width: auto;
 	fill: var(--clr_main);
 }
-
-/*.lightbox_content_exit:after
-{
-	content: "X";
-}*/
 
 .lightbox_content_exit:hover, .lightbox_content_previous:hover, .lightbox_content_next:hover
 {
