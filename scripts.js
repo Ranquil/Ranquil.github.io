@@ -349,7 +349,7 @@ function resizeImage()
 		var divRatio = parentDiv.clientWidth; divRatio /= divTrueHeight;
 		var resWidth, resHeight;
 		
-		if (img.naturalWidth > parentDiv.width || img.naturalHeight > divTrueHeight)
+		if (img.naturalWidth > parentDiv.clientWidth || img.naturalHeight > divTrueHeight)
 		{
 			var divMin = Math.min(parentDiv.clientWidth, divTrueHeight);
 		
