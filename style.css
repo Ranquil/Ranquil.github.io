@@ -136,7 +136,7 @@ a.nav
 	text-align: center;
 	font-weight: bold;
 	text-decoration: none;
-	color: var(--clr_light);
+	color: #e6f3ea;
 	padding: 10px 5px;
 	vertical-align: middle;
 	display: inline-block;
@@ -265,13 +265,6 @@ a.nav:hover span.nav:before, a.nav:hover span.nav:after, #landingPage a:hover sp
 	font-family: var(--ff_sans);
 }
 
-:lang(jp) #content u
-{
-	text-decoration: none;
-	border-bottom: 2px dotted #e6f3ea;
-	border-bottom: 2px dotted #e6f3eac8;
-}
-
 :lang(jp) #content b
 {
 	font-weight: bolder;
@@ -320,24 +313,18 @@ a.nav:hover span.nav:before, a.nav:hover span.nav:after, #landingPage a:hover sp
 {
 	flex-grow: 1;
 	background: rgba(0,0,0,0.5);
-	border: 2px solid #52ad9a;
+	border: 2px solid var(--clr_main);
 	border-left: none;
 }
 
 #expSoftware div:nth-of-type(1)
 {
-	border-left: 2px solid #52ad9a;
+	border-left: 2px solid var(--clr_main);
 }
 
 #expSoftware ul
 {
 	padding-left: 28px;
-}
-
-hr
-{
-	border-top: 1px solid #c5d8c1;
-	border-top: 1px solid #c5d8c188;
 }
 
 h3
@@ -346,10 +333,10 @@ h3
 	font-size: 1.25em;
 	font-variant: small-caps;
 	color: white;
-	background: #52ad9a;
-	background: #52ad9acc;
+	background: var(--clr_main);
+	background: rgba(var(--clr_main_calc),0.75);
 	padding: 10px 13px;
-	border-left: 15px solid #c5d8c1;
+	border-left: 15px solid var(--clr_light);
 }
 
 #contactContent h3
@@ -467,9 +454,12 @@ input[type=submit]:hover
 .galleryContainer
 {
 	display: grid;
+	display: -webkit-grid;
 	width: 100%;
 	grid-template-columns: auto auto auto;
+	-webkit-grid-template-columns: auto auto auto;
 	grid-gap: 10px;
+	-webkit-grid-gap: 10px;
 	justify-content: space-evenly;
 	text-align: center;
 	padding: 10px;
@@ -752,7 +742,6 @@ a.smicon:hover svg path
 	#content, #container
 	{
 		width: 75%;
-		/*font-size: 13px;*/
 		margin-bottom: 25px;
 	}
 	
@@ -771,6 +760,7 @@ a.smicon:hover svg path
 	.galleryContainer
 	{
 		grid-template-columns: auto auto;
+		-webkit-grid-template-columns: auto auto;
 	}
 }
 
@@ -826,6 +816,7 @@ a.smicon:hover svg path
 	.galleryContainer
 	{
 		grid-template-columns: auto;
+		-webkit-grid-template-columns: auto;
 	}
 }
 
