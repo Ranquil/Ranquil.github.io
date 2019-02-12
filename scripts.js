@@ -61,6 +61,12 @@ var digitalImgFiles =
 	`Käyntikorttimalli`,
 	`名刺デザイン`),
 	new GalleryImage(
+	`bcardlace`,
+	`jpg`,
+	`Business Card Design`,
+	`Käyntikorttimalli`,
+	`名刺デザイン`),
+	new GalleryImage(
 	`majyokko`,
 	`jpg`,
 	`Digital Ink Drawing`,
@@ -120,6 +126,12 @@ var gameArtImgFiles =
 	`Achievement Icons for FinSummerVR`,
 	`Achievement-ikoneja FinSummerVR:ään`,
 	`「<span lang="en">FinSummerVR</span>」にアチーブメント・アイコン`),
+	new GalleryImage(
+	`gamevector`,
+	`jpg`,
+	`UI Graphics`,
+	`Käyttöliittymägrafiikkaa`,
+	`UIグラフィックス`),
 	new GalleryImage(
 	`flan`,
 	`gif`,
