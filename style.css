@@ -820,6 +820,14 @@ a.smicon:hover svg path
 	}
 }
 
+@media (hover: none)
+{
+	.thumbnail
+	{
+		filter: brightness(100%);
+	}
+}
+
 @media \0screen\,screen\9, screen and (min-width:0\0) and (min-resolution: +72dpi) /* INTERNET EXPLORER */
 {
     #safety, #landingPage
