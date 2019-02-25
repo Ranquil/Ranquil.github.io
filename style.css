@@ -561,10 +561,10 @@ input[type=submit]:hover
 {
 	display: flex;
 	position: fixed;
-	width: 100px;
-	height: 100px;
-	top: 1vmax;
-	right: 1vmax;
+	width: 50px;
+	height: 50px;
+	top: 1vmin;
+	right: 1vmin;
 	z-index: 1003;
 	text-decoration: none;
 	opacity: 0.5;
@@ -572,17 +572,19 @@ input[type=submit]:hover
 	transition-duration: 0.2s;
 }
 
+.lightbox_content svg
+{
+	width: 40px;
+	height: auto;
+}
+
 .lightbox_content_exit > svg path
 {
-	height: 100%;
-	width: 100%;
 	fill: var(--clr_main);
 }
 
 .lightbox_content_previous svg path, .lightbox_content_next svg path
 {
-	height: 100%;
-	width: auto;
 	fill: var(--clr_main);
 }
 
