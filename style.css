@@ -219,7 +219,7 @@ a.nav:hover span.nav:before, a.nav:hover span.nav:after, #landingPage a:hover sp
 {
 	box-sizing: border-box;
 	margin: auto;
-	margin-bottom: 5%;
+	margin-bottom: 100px;
 	width: 60%;
 	padding: 25px 0px;
 	font-family: var(--ff_sans);
