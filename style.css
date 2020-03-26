@@ -106,18 +106,18 @@ a.nav:hover, #landingPage a:hover
 
 #header h2 span:after
 {
-	content: "game\00a0 designer \2013  2D\00a0 artist \2013  illustrator";
+	content: "graphic\00a0 designer \2013  illustrator \2013  game\00a0 designer";
 }
 
 :lang(fi) #header h2 span:after
 {
 	
-	content: "pelisuunnittelija \2013  2D-graafikko \2013  kuvittaja";
+	content: "graafinen\00a0 suunnittelija \2013  kuvittaja \2013  pelisuunnittelija";
 }
 
 :lang(jp) #header h2 span:after
 {
-	content: "ゲームプランナー　２Ｄデザイナー　イラストレーター";
+	content: "グラフィックデザイナー　イラストレーター　ゲームプランナー";
 }
 
 /*NAVIGATION==================================================================*/

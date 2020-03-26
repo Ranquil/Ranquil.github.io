@@ -41,13 +41,13 @@ var digitalImgFiles =
 	`jpg`,
 	`Album Cover for Limos`,
 	`Levynkansi Limos-bändille`,
-	`「リモス」にアルバムカバー`),
+	`「リモス」へのアルバムカバー`),
 	new GalleryImage(
-	`jigazou`,
+	`portrait`,
 	`jpg`,
-	`Self-portrait`,
-	`Omakuva`,
-	`自画像`),
+	`Digitally Colored Pencil Drawing`,
+	`Digitaalisesti väritetty lyijykynäpiirros`,
+	`デジタル的に彩った鉛筆画`),
 	new GalleryImage(
 	`sky`,
 	`jpg`,
@@ -71,7 +71,7 @@ var digitalImgFiles =
 	`jpg`,
 	`Digital Ink Drawing`,
 	`Digitaalinen mustepiirros`,
-	`デジタルの墨書き`)
+	`デジタル墨書き`)
 ];
 var tradImgFiles =
 [
@@ -119,13 +119,13 @@ var gameArtImgFiles =
 	`jpg`,
 	`Game Over Illustration for a Jam Game`,
 	`Game Over -kuvitus jamipeliin`,
-	`ジャムゲームにゲームオーバー挿絵`),
+	`ジャムゲームへのゲームオーバー挿絵`),
 	new GalleryImage(
 	`icons`,
 	`jpg`,
 	`Achievement Icons for FinSummerVR`,
 	`Achievement-ikoneja FinSummerVR:ään`,
-	`「<span lang="en">FinSummerVR</span>」にアチーブメント・アイコン`),
+	`「<span lang="en">FinSummerVR</span>」へのアチーブメント・アイコン`),
 	new GalleryImage(
 	`gamevector`,
 	`jpg`,
@@ -458,7 +458,7 @@ function sendEmail(e, userLang)
 						break;
 						
 						case 'jp':
-						alert("何かは駄目になってしまいました！欄が全部詰めてあり、メールアドレスが正しく書いてあると確かめてください。\nエラーメッセージ： " + res);
+						alert("何かは駄目になってしまいました！全ての欄が詰めてあり、メールアドレスが正しく書いてあると確かめてください。\nエラーメッセージ： " + res);
 						break;
 						
 						default:
