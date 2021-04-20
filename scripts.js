@@ -37,80 +37,101 @@ class GalleryImage
 var digitalImgFiles =
 [
 	new GalleryImage(
-	`limos`,
-	`jpg`,
-	`Album Cover for Limos`,
-	`Levynkansi Limos-bändille`,
-	`「リモス」へのアルバムカバー`),
+		`limos`,
+		`jpg`,
+		`Album Cover for Limos`,
+		`Levynkansi Limos-bändille`,
+		`「リモス」へのアルバムカバー`),
 	new GalleryImage(
-	`portrait`,
-	`jpg`,
-	`Digitally Colored Pencil Drawing`,
-	`Digitaalisesti väritetty lyijykynäpiirros`,
-	`デジタル的に彩った鉛筆画`),
+		`sky`,
+		`jpg`,
+		`Digital Painting`,
+		`Digitaalinen maalaus`,
+		`デジタル絵画`),
 	new GalleryImage(
-	`sky`,
-	`jpg`,
-	`Digital Painting`,
-	`Digitaalinen maalaus`,
-	`デジタル絵画`),
+		`perfectblue`,
+		`jpg`,
+		`Film Poster`,
+		`Elokuvajuliste`,
+		`映画ポスター`),
 	new GalleryImage(
-	`bcard`,
-	`jpg`,
-	`Business Card Design`,
-	`Käyntikorttimalli`,
-	`名刺デザイン`),
+		`portrait`,
+		`jpg`,
+		`Digitally Colored Pencil Drawing`,
+		`Digitaalisesti väritetty lyijykynäpiirros`,
+		`デジタル的に彩った鉛筆画`),
 	new GalleryImage(
-	`bcardlace`,
-	`jpg`,
-	`Business Card Design`,
-	`Käyntikorttimalli`,
-	`名刺デザイン`),
+		`majyokko`,
+		`jpg`,
+		`Digital Ink Drawing`,
+		`Digitaalinen mustepiirros`,
+		`デジタル墨書き`)
+];
+var designImgFiles =
+[
 	new GalleryImage(
-	`majyokko`,
-	`jpg`,
-	`Digital Ink Drawing`,
-	`Digitaalinen mustepiirros`,
-	`デジタル墨書き`)
+		`cafe`,
+		`jpg`,
+		`Brand Mockup`,
+		`Brändi-mockup`,
+		`ブランド・モックアップ`),
+	new GalleryImage(
+		`bcard`,
+		`jpg`,
+		`Business Card Design`,
+		`Käyntikorttimalli`,
+		`名刺デザイン`),
+	new GalleryImage(
+		`bcardlace`,
+		`jpg`,
+		`Business Card Design`,
+		`Käyntikorttimalli`,
+		`名刺デザイン`)
 ];
 var tradImgFiles =
 [
 	new GalleryImage(
-	`galactic`,
-	`jpg`,
-	`Watercolor Portrait`,
-	`Vesivärimuotokuva`,
-	`水彩肖像画`),
+		`galactic`,
+		`jpg`,
+		`Watercolor Portrait`,
+		`Vesivärimuotokuva`,
+		`水彩肖像画`),
 	new GalleryImage(
-	`mettja`,
-	`jpg`,
-	`Watercolor Painting`,
-	`Vesivärimaalaus`,
-	`水彩画`),
+		`mettja`,
+		`jpg`,
+		`Watercolor Painting`,
+		`Vesivärimaalaus`,
+		`水彩画`),
 	new GalleryImage(
-	`lady`,
-	`jpg`,
-	`Watercolor Painting`,
-	`Vesivärimaalaus`,
-	`水彩画`),
+		`hana`,
+		`gif`,
+		`Pencil animation`,
+		`Lyijykynäanimaatio`,
+		`鉛筆アニメーション`),
 	new GalleryImage(
-	`gift`,
-	`jpg`,
-	`Inktober piece`,
-	`Inktober-työ`,
-	`「<span lang="en">Inktober</span>」作品`),
+		`lady`,
+		`jpg`,
+		`Watercolor Painting`,
+		`Vesivärimaalaus`,
+		`水彩画`),
 	new GalleryImage(
-	`hands`,
-	`jpg`,
-	`Inktober piece`,
-	`Inktober-työ`,
-	`「<span lang="en">Inktober</span>」作品`),
+		`gift`,
+		`jpg`,
+		`Inktober piece`,
+		`Inktober-työ`,
+		`「<span lang="en">Inktober</span>」作品`),
 	new GalleryImage(
-	`whale`,
-	`jpg`,
-	`Inktober piece`,
-	`Inktober-työ`,
-	`「<span lang="en">Inktober</span>」作品`)
+		`hands`,
+		`jpg`,
+		`Inktober piece`,
+		`Inktober-työ`,
+		`「<span lang="en">Inktober</span>」作品`),
+	new GalleryImage(
+		`whale`,
+		`jpg`,
+		`Inktober piece`,
+		`Inktober-työ`,
+		`「<span lang="en">Inktober</span>」作品`)
 ];
 var gameArtImgFiles =
 [
@@ -299,6 +320,7 @@ function redirectByLang()
 function gallerySetup()
 {
 	document.getElementById("digital").innerHTML = setImgButtons(digitalImgFiles, "digitalImgFiles");
+	document.getElementById("design").innerHTML = setImgButtons(designImgFiles, "designImgFiles");
 	document.getElementById("trad").innerHTML = setImgButtons(tradImgFiles, "tradImgFiles");
 	document.getElementById("2d").innerHTML = setImgButtons(gameArtImgFiles, "gameArtImgFiles");
 }
