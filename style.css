@@ -88,6 +88,7 @@ a.nav:hover, #landingPage a:hover
 {
 	font-size: 2.82em;
 	font-family: var(--ff_serif);
+	font-variant: small-caps;
 }
 
 #header h2
@@ -106,18 +107,18 @@ a.nav:hover, #landingPage a:hover
 
 #header h2 span:after
 {
-	content: "game\00a0 designer \2013  2D\00a0 artist \2013  illustrator";
+	content: "graphic\00a0 designer \2013  illustrator \2013  game\00a0 designer";
 }
 
 :lang(fi) #header h2 span:after
 {
 	
-	content: "pelisuunnittelija \2013  2D-graafikko \2013  kuvittaja";
+	content: "graafinen\00a0 suunnittelija \2013  kuvittaja \2013  pelisuunnittelija";
 }
 
 :lang(jp) #header h2 span:after
 {
-	content: "ゲームプランナー　２Ｄデザイナー　イラストレーター";
+	content: "グラフィックデザイナー　イラストレーター　ゲームプランナー";
 }
 
 /*NAVIGATION==================================================================*/
@@ -219,7 +220,7 @@ a.nav:hover span.nav:before, a.nav:hover span.nav:after, #landingPage a:hover sp
 {
 	box-sizing: border-box;
 	margin: auto;
-	margin-bottom: 5%;
+	margin-bottom: 100px;
 	width: 60%;
 	padding: 25px 0px;
 	font-family: var(--ff_sans);
