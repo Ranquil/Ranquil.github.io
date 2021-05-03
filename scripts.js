@@ -76,6 +76,18 @@ var designImgFiles =
 		`Brändi-mockup`,
 		`ブランド・モックアップ`),
 	new GalleryImage(
+		`eggplant`,
+		`gif`,
+		`Motion Graphic`,
+		`Motion graphic`,
+		`モーショングラフィックス`),
+	new GalleryImage(
+		`uglogo`,
+		`jpg`,
+		`Hand-lettered Logo`,
+		`Käsin tekstattu logo`,
+		`手で書いたロゴ`),
+	new GalleryImage(
 		`bcard`,
 		`jpg`,
 		`Business Card Design`,
