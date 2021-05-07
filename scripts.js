@@ -148,6 +148,12 @@ var tradImgFiles =
 var gameArtImgFiles =
 [
 	new GalleryImage(
+	`ugss`,
+	`jpg`,
+	`All UI Assets aside from Item Icons`,
+	`Esineikonit poislukien kaikki UI-grafiikat`,
+	`アイテムアイコンをよそにして全てのUIグラフィックス`),
+	new GalleryImage(
 	`gameover`,
 	`jpg`,
 	`Game Over Illustration for a Jam Game`,
