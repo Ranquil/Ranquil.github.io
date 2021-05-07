@@ -88,6 +88,18 @@ var designImgFiles =
 		`Käsin tekstattu logo`,
 		`手で書いたロゴ`),
 	new GalleryImage(
+		`morso`,
+		`jpg`,
+		`Photo Manipulation, Model: Marleena Maliniemi`,
+		`Kuvamanipulaatio, malli: Marleena Maliniemi`,
+		`写真煩集、モデル：「<span lang="en">Marleena Maliniemi</span>」`),
+		new GalleryImage(
+		`noita`,
+		`jpg`,
+		`Photo Manipulation, Photographer: Rami Kujala`,
+		`Kuvamanipulaatio, kuvaaja: Rami Kujala`,
+		`写真編集、写真家：「<span lang="en">Rami Kujala</span>」`),
+	new GalleryImage(
 		`bcard`,
 		`jpg`,
 		`Business Card Design`,
