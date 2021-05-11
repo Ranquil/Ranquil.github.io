@@ -93,12 +93,18 @@ var designImgFiles =
 		`Photo Manipulation, Model: Marleena Maliniemi`,
 		`Kuvamanipulaatio, malli: Marleena Maliniemi`,
 		`写真煩集、モデル：「<span lang="en">Marleena Maliniemi</span>」`),
-		new GalleryImage(
+	new GalleryImage(
 		`noita`,
 		`jpg`,
 		`Photo Manipulation, Photographer: Rami Kujala`,
 		`Kuvamanipulaatio, kuvaaja: Rami Kujala`,
 		`写真編集、写真家：「<span lang="en">Rami Kujala</span>」`),
+	new GalleryImage(
+		`fauralogo`,
+		`jpg`,
+		`Hand-lettered Logo`,
+		`Käsin tekstattu logo`,
+		`手で書いたロゴ`),
 	new GalleryImage(
 		`bcard`,
 		`jpg`,
@@ -381,6 +387,7 @@ function createLightbox(categoryName, imgIndex)
 	var imgIndexNext = imgIndex; imgIndexNext++;
 	
 	htmlCode += `<div id="preview_${img.fileName}" class="lightbox">
+	<div style="height: 100%; width: 100%; position: fixed;" onclick="document.getElementById('lightboxStorage').innerHTML = ''"></div>
 	<div class="lightbox_content h-center v-center">`;
 	if (imgIndex > 0)
 	{
