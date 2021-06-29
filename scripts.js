@@ -70,6 +70,12 @@ var digitalImgFiles =
 var designImgFiles =
 [
 	new GalleryImage(
+		`datensi`,
+		`jpg`,
+		`Vector Illustration`,
+		`Vektorikuvitus`,
+		`ベクトルイラスト`),
+	new GalleryImage(
 		`cafe`,
 		`jpg`,
 		`Brand Mockup`,
