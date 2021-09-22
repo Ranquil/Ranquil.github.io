@@ -51,7 +51,7 @@ body
 	background: -webkit-linear-gradient(left, rgba(2,4,16,0.9), rgba(2,4,16,0.7), rgba(2,4,16,0.5), rgba(2,4,16,0.7), rgba(2,4,16,0.9)), url("img/bgblue_64.png");
 	background: linear-gradient(to right, rgba(2,4,16,0.9), rgba(2,4,16,0.7), rgba(2,4,16,0.5), rgba(2,4,16,0.7), rgba(2,4,16,0.9)), url("img/bgblue_64.png");
 	background-attachment: fixed;
-	margin: 0;
+	margin: 0 0 100px 0;
 	padding: 0;
 }
 
