@@ -51,8 +51,9 @@ body
 	background: -webkit-linear-gradient(left, rgba(2,4,16,0.9), rgba(2,4,16,0.7), rgba(2,4,16,0.5), rgba(2,4,16,0.7), rgba(2,4,16,0.9)), url("img/bgblue_64.png");
 	background: linear-gradient(to right, rgba(2,4,16,0.9), rgba(2,4,16,0.7), rgba(2,4,16,0.5), rgba(2,4,16,0.7), rgba(2,4,16,0.9)), url("img/bgblue_64.png");
 	background-attachment: fixed;
-	margin: 0 0 100px 0;
+	/* margin: 0 0 100px 0; */
 	padding: 0;
+	min-height: 100vh;
 }
 
 #main
@@ -221,6 +222,7 @@ a.nav:hover span.nav:before, a.nav:hover span.nav:after, #landingPage a:hover sp
 	box-sizing: border-box;
 	margin: auto;
 	margin-bottom: 100px;
+	min-height: 80vh;
 	width: 60%;
 	padding: 25px 0px;
 	font-family: var(--ff_sans);
@@ -610,12 +612,12 @@ input[type=submit]:hover
 
 #footer
 {
-	position: fixed;
 	bottom: 0;
 	width: 100%;
 	border-top: 10px solid var(--clr_light);
 	background: var(--clr_main);
-	padding: 20px 0px;
+	padding: 20px 0;
+	margin-bottom: 0;
 }
 
 #container
