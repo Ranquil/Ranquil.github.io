@@ -534,6 +534,7 @@ input[type=submit]:hover
 	margin-right: auto;
 	z-index: 1000;
 	padding-bottom: 5px;
+	box-shadow: 0 0 24px var(--clr_dark);
 }
 
 .lightbox_content_previous, .lightbox_content_next
