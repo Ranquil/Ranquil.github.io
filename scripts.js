@@ -82,6 +82,12 @@ var designImgFiles =
 		`Brändi-mockup`,
 		`ブランド・モックアップ`),
 	new GalleryImage(
+		`varpumagic`,
+		`gif`,
+		`Motion Graphic`,
+		`Motion graphic`,
+		`モーショングラフィックス`),
+	new GalleryImage(
 		`eggplant`,
 		`gif`,
 		`Motion Graphic`,
