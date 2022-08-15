@@ -70,6 +70,24 @@ var digitalImgFiles =
 var designImgFiles =
 [
 	new GalleryImage(
+		`oulupridepamphlet`,
+		`jpg`,
+		`Tri-fold Pamphlet`,
+		`Kolmitaitepamfletti`,
+		`三つ折りのパンフレット`),
+	new GalleryImage(
+		`9solutions1`,
+		`jpg`,
+		`Vector Illustration`,
+		`Vektorikuvitus`,
+		`ベクトルイラスト`),
+	new GalleryImage(
+		`9solutions2`,
+		`jpg`,
+		`Vector Illustration`,
+		`Vektorikuvitus`,
+		`ベクトルイラスト`),
+	new GalleryImage(
 		`datensi`,
 		`jpg`,
 		`Vector Illustration`,
