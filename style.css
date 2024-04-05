@@ -108,18 +108,18 @@ a.nav:hover, #landingPage a:hover
 
 #header h2 span:after
 {
-	content: "graphic\00a0 designer \2013  illustrator \2013  game\00a0 designer";
+	content: "graphic\00a0 designer \2013  illustrator \2013  UI\00a0 •\00a0 UX\00a0 designer";
 }
 
 :lang(fi) #header h2 span:after
 {
 	
-	content: "graafinen\00a0 suunnittelija \2013  kuvittaja \2013  pelisuunnittelija";
+	content: "graafinen\00a0 suunnittelija \2013  kuvittaja \2013  UI•UX-suunnittelija";
 }
 
 :lang(jp) #header h2 span:after
 {
-	content: "グラフィックデザイナー　イラストレーター　ゲームプランナー";
+	content: "グラフィックデザイナー　イラストレーター　UI•UXデザイナー";
 }
 
 /*NAVIGATION==================================================================*/
@@ -683,7 +683,7 @@ a.smicon:hover svg path
 
 #copyright p span:after
 {
-	content: "\00a9 2021";
+	content: "\00a9 2024";
 }
 
 /*LANDING PAGE==================================================================*/
